@@ -9,9 +9,14 @@
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+    {{-- <livewire:supplier-list/> --}}
+    {{-- <livewire:item-list/> --}}
+    <livewire:purchase-order/>
+   <x-supplier-modal>
+   
+   </x-supplier-modal>
+
+   <x-modal></x-modal>
 </body>
 
 </html>
