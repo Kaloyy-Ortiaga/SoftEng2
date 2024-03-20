@@ -71,7 +71,7 @@
             <div class="flex flex-col ml-9 w-[84%] max-md:ml-0 max-md:w-full">
                 <div class="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
                     <div class="-mt-10 text-3xl font-semibold text-black max-md:max-w-full">
-                        PURCHASE ORDER
+                        INVOICE LIST
                     </div>
                     <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>
                     <div
