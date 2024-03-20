@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    @livewireStyles
 </head>
 
 <body>
-    {{-- <livewire:supplier-list/> --}}
-    {{-- <x-supplier-modal>
-    </x-supplier-modal> --}}
+    <livewire:supplier-list/>
+    
+    {{-- <x-supplier-modal> </x-supplier-modal> //sample lang to  --}}
 
     <x-modal name="supplier" title="Add Supplier Information">
         <x-slot:body>
@@ -76,6 +77,8 @@
 
     <livewire:item-list />  
 
+    {{-- @include('livewire.item-list') --}}
+    
     <x-modal name="item" title="Add Item Information">
         <x-slot:body>
             <div class="mt-2 text-xl leading-5 text-black">Supplier Name:</div>
@@ -134,7 +137,10 @@
 
 
 
-    {{-- <livewire:purchase-order/> --}}
+    <livewire:purchase-order/>
+
+    <livewire:invoice-list>
+    @livewireScripts
 </body>
 
 </html>
