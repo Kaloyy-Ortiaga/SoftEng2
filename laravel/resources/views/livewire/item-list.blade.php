@@ -83,7 +83,7 @@
                                     class="justify-center px-3 py-2 bg-white rounded-md border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)] text-ellipsis text-zinc-500">
                                     Search
                                 </div>
-                                <button x-on:click="$dispatch('open-suppliermodal')"
+                                <button x-on:click="$dispatch('open-modal',{name: 'item'})"
                                     class="justify-center px-4 py-2 font-medium text-white rounded-md shadow bg-zinc-900">
                                     ADD SUPPLIER
                                 </button>
@@ -166,7 +166,16 @@
                                         class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
                                         action
                                     </div>
-                                    <div class="h-10 bg-white shrink-0"></div>
+                                     <div class="flex justify-between gap-0 py-2.5 bg-white">
+                                        <button x-on:click="$dispatch('open-modal',{name: 'edititem'})"
+                                            class="ml-2 leading-5 text-cyan-700">
+                                            Edit
+                                            <span class="-ml-1 text-black">/</span>
+                                        </button>
+                                        <div class="flex-auto text-cyan-700 leading-[143%]">
+                                            View
+                                        </div>
+                                    </div>
                                     <div class="justify-center px-2 py-2.5 bg-slate-50">Edit/View</div>
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
                                     <div class="justify-center px-2 py-2.5 bg-slate-50">Text</div>

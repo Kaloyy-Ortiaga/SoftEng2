@@ -70,7 +70,7 @@
             </div>
             <div class="flex flex-col ml-9 w-[84%] max-md:ml-0 max-md:w-full">
                 <div class="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
-                    <div class="text-3xl font-semibold text-black max-md:max-w-full -mt-10">
+                    <div class="-mt-10 text-3xl font-semibold text-black max-md:max-w-full">
                         SUPPLIER LIST
                     </div>
                     <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>
@@ -83,7 +83,7 @@
                                     class="justify-center px-3 py-2 bg-white rounded-md border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)] text-ellipsis text-zinc-500">
                                     Search
                                 </div>
-                                <button x-on:click="$dispatch('open-suppliermodal')"
+                                <button x-on:click="$dispatch('open-modal',{name: 'supplier'})"
                                     class="justify-center px-4 py-2 font-medium text-white rounded-md shadow bg-zinc-900">
                                     ADD SUPPLIER
                                 </button>
@@ -167,10 +167,11 @@
                                         action
                                     </div>
                                     <div class="flex gap-0 justify-between py-3.5 bg-white">
-                                        <div class="ml-2 leading-5 text-black">
+                                        <button x-on:click="$dispatch('open-modal',{name: 'editsupplier'})"
+                                            class="ml-2 leading-5 text-cyan-700">
                                             Edit
-                                            <span class="-ml-2 text-black">/</span>
-                                        </div>
+                                            <span class="-ml-1 text-black">/</span>
+                                        </button>
                                         <div class="flex-auto text-cyan-700 leading-[143%]">
                                             View
                                         </div>
