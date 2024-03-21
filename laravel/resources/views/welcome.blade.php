@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <livewire:supplier-list/>
+    {{--<livewire:supplier-list/> --}
     
     {{-- <x-supplier-modal> </x-supplier-modal> //sample lang to  --}}
 
@@ -75,7 +75,7 @@
 
 
 
-    <livewire:item-list />  
+    {{---<livewire:item-list />  --}}
 
     {{-- @include('livewire.item-list') --}}
     
@@ -139,7 +139,9 @@
 
     <livewire:purchase-order/>
 
-    <livewire:invoice-list>
+    {{--<livewire:invoice-list>--}}
+
+    <livewire:create-pr>
     @livewireScripts
 </body>
 
