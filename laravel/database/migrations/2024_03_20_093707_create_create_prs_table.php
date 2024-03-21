@@ -31,7 +31,7 @@ return new class extends Migration
             $table->timestamps();
             
             // Foreign key constraint
-            $table->foreign('pr_no')->references('id')->on('create_pr')->onDelete('cascade');
+            $table->foreign('pr_no')->references('id')->on('purchase_requests')->onDelete('cascade');
         });
     }
 
