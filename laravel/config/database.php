@@ -47,17 +47,10 @@ return [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
-<<<<<<< Updated upstream
-            'port' => env('DB_PORT', '3308'),
-            'database' => env('DB_DATABASE', 'purchasingmodule'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', 'Alliswell09'),
-=======
-            'port' => env('DB_PORT', '3310'),
-            'database' => env('DB_DATABASE', 'purchasingmodule'),
-            'username' => env('DB_USERNAME', 'root'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
->>>>>>> Stashed changes
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
