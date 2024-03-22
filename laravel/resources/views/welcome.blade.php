@@ -141,7 +141,7 @@
 
     {{--<livewire:invoice-list>--}}
 
-    <livewire:create-pr>
+    {{-- <livewire:create-pr> --}}
     @livewireScripts
 </body>
 
