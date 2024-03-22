@@ -15,13 +15,13 @@
                     <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>
                     <div
                         class="flex justify-center items-center px-16 py-12 mt-9 text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5 max-md:max-w-full">
-                        <div class="flex flex-col mt-5 mb-28 max-w-full w-[1065px] max-md:mb-10 bg-blue-700">
+                        <div class="flex flex-col mt-5 mb-28 max-w-full w-[1065px] max-md:mb-10 ">
                             <div
                                 class="flex gap-5 justify-between whitespace-nowrap leading-[143%] max-md:flex-wrap max-md:max-w-full">
                                 @include('livewire.includes.search-box')
                                 <button x-on:click="$dispatch('open-suppliermodal')"
                                     class="justify-center px-4 py-2 font-medium text-white rounded-md shadow bg-zinc-900">
-                                    CREATE PURCHASE REQUEST
+                                    CREATE PURCHASE REQUEST   
                                 </button>
                             </div>
                             

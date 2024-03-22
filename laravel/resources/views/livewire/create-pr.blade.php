@@ -5,7 +5,7 @@
             
             <div class="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
                 @include('livewire.includes.sides')
-                <div class="flex flex-col ml-9 w-[84%] max-md:ml-0 max-md:w-full bg-green-500">
+                <div class="flex flex-col ml-9 w-[84%] max-md:ml-0 max-md:w-full">
                     
                         <div class="flex flex-row justify-between">
                             <div class="mt-10 text-3xl font-semibold text-black max-md:max-w-full">
