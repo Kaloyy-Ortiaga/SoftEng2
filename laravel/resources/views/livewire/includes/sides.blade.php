@@ -5,7 +5,7 @@
             <img loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/b005162f726a1815db8eded6229fb949400b9c915f1abb6ba236dc24d086f970?apiKey=19339f2aa9954834ba3c5156652a7fa7&"
                 class="aspect-square stroke-[2px] mt-3 stroke-indigo-50 w-[22px]" />
-            <div class="whitespace-normal truncate flex-auto self-start mt-2.5">PURCHASE ORDER</div>
+            <div class="text-clip overflow-hidden flex-auto self-start mt-2.5">PURCHASE ORDER</div>
         </div>
         <div class="flex justify-between gap-5 mt-96 whitespace-nowrap max-md:mt-10">
             <img loading="lazy"
