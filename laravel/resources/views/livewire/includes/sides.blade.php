@@ -11,8 +11,7 @@
         <div class="flex self-start justify-between gap-5 mt-96 whitespace-nowrap max-md:mt-10">
             <img loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/b1be7030142db8c040e885de68a9aab01226bcd184e725ecbf06821a14555e41?apiKey=19339f2aa9954834ba3c5156652a7fa7&"
-                 class="aspect-square stroke-[2px] -ml-0 -mr-2 stroke-indigo-50 w-[22px]" />
-            LOGOUT
+                 class="aspect-square stroke-[2px] -ml-0 -mr-2 stroke-indigo-50 w-[22px]" /> LOGOUT
         </div>
     </div>
 </div>

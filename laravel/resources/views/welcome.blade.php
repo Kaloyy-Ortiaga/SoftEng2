@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    {{--<livewire:supplier-list/> --}
+    {{-- <livewire:supplier-list/> --}}
     
     {{-- <x-supplier-modal> </x-supplier-modal> //sample lang to  --}}
 
