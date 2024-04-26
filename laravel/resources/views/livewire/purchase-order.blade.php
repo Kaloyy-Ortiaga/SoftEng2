@@ -1,3 +1,4 @@
+{{-- User side --}}
 <div class="flex flex-col bg-white">
 
     @include('livewire.includes.header')
