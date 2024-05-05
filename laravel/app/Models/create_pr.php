@@ -2,18 +2,31 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\BelongsToRelationship;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class create_pr extends Model
-{
-    protected $fillable =[
-        'stock_no',
-        'unit',
-        'item_description',
-        'quantity',
-        'unit_cost',
-        'amount',
+{  
+    use HasFactory;
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'create_prs';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'purchase_request_id',
         'department',
         'pr_no',
         'pr_date',
@@ -23,6 +36,30 @@ class create_pr extends Model
         'requested_by',
         'designation',
         'purpose',
+        'total_amount',
+        'approved_by',
+        'approved_designation',
+        'note',
     ];
-    use HasFactory;
+
+    /**
+     * Get the purchase request that owns the create_pr.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function purchaseRequest(): BelongsTo
+    {
+        return $this->belongsTo(purchase_request::class);
+    }
+
+    /**
+     * Get the create_prs_items associated with the create_pr.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function createPrsItems(): HasMany
+    {
+        return $this->hasMany(PrsItem::class);
+    }
+
 }

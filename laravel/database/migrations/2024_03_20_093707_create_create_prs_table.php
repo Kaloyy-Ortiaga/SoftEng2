@@ -13,12 +13,7 @@ return new class extends Migration
     {
         Schema::create('create_prs', function (Blueprint $table) {
             $table->id();
-            $table->string('stock_no');
-            $table->string('unit')->nullable();
-            $table->string('item_description');
-            $table->integer('quantity');
-            $table->decimal('unit_cost', 10, 2);
-            $table->decimal('amount', 10, 2);
+            $table->unsignedBigInteger('purchase_request_id');
             $table->enum('department', ['CHASS', 'CET', 'CN', 'CS', 'CISTM']);
             $table->string('pr_no');
             $table->date('pr_date');
@@ -28,10 +23,15 @@ return new class extends Migration
             $table->string('requested_by');
             $table->string('designation');
             $table->string('purpose');
+            $table->decimal('total_amount', 10, 2)->nullable();
+            $table->string('approved_by')->nullable(); 
+            $table->string('approved_designation')->nullable(); 
+            $table->text('note')->nullable(); 
             $table->timestamps();
             
             // Foreign key constraint
             $table->foreign('pr_no')->references('pr_no')->on('purchase_requests')->onDelete('cascade');
+            $table->foreign('purchase_request_id')->references('id')->on('purchase_requests')->onDelete('cascade');
         });
     }
 
