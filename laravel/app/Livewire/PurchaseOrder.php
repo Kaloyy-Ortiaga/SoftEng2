@@ -11,6 +11,7 @@ class PurchaseOrder extends Component
 {
     use WithPagination;
     public $search; 
+    public $isAdmin = false;
     public function render()
     {
         return view('livewire.purchase-order', [
