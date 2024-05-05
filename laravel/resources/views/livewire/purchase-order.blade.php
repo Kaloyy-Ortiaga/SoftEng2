@@ -19,7 +19,7 @@
                         <div class="flex flex-col mt-5 mb-28 max-w-full w-[1065px] max-md:mb-10 ">
                             <div
                                 class="flex gap-5 justify-between -mt-4 -mb-4 whitespace-nowrap leading-[143%] max-md:flex-wrap max-md:max-w-full">
-                                @include('livewire.includes.search-box')
+                                @include('livewire.search-bar')
                                 <button  x-on:click="$dispatch('open-modal',{name: 'supplier'})"
                                     class="justify-center h-10 px-4 py-2 mt-3.5 font-medium text-white rounded-md shadow bg-zinc-900 w-226">
                                     CREATE PURCHASE REQUEST
