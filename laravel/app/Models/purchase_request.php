@@ -14,4 +14,8 @@ class purchase_request extends Model
         'department',
         'status',
     ];
+    public function creatingPr()
+    {
+        return $this->hasOne(create_pr::class, 'pr_no', 'pr_no');
+    }
 }

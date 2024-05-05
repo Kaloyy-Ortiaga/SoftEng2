@@ -15,7 +15,7 @@ class PurchaseOrder extends Component
     public function render()
     {
         return view('livewire.purchase-order', [
-            'purchaseOrder' => purchase_request::latest()-> get()
+            'purchaseOrders' => purchase_request::latest()-> get()
         ]);
     }
 }

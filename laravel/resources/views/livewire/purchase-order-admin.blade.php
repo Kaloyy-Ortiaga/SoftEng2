@@ -11,7 +11,7 @@
             <div class="flex flex-col ml-6 -mt-16 w-[84%] max-md:ml-0 max-md:w-full">
                 <div class="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
                     <div class="mt-10 text-3xl font-semibold text-black max-md:max-w-full">
-                        PURCHASE REQUEST
+                        PURCHASE REQUEST Admin
                     </div>
                     <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>
                     <div
@@ -26,7 +26,7 @@
                                 </button>
                             </div>
 
-                            @include('livewire.includes.request-table')
+                            @include('livewire.includes.admin.request-table-admin')
 
 
                             <div class="mt-6 leading-[143%] text-gray-800 text-opacity-80 max-md:max-w-full">

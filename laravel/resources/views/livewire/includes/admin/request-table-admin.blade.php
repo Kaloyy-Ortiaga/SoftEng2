@@ -3,7 +3,7 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.3] bg-slate-100 leading-[114%]">
             No.
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseRequests as $index => $purchaseRequest)
         <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} aspect-[1.3]">
             {{ $index + 1 }}
         </div>
@@ -13,9 +13,9 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             Date created
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
-        <div class="justify-center px-2 py-2.5 {{ ($index) % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-            {{ $purchaseOrder->date_created }}
+        @foreach ($purchaseRequests as $index => $purchaseRequest)
+        <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
+            {{ $purchaseRequest->date_created }}
         </div>
         @endforeach
     </div>
@@ -23,9 +23,9 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             P.R. No.
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseRequests as $index => $purchaseRequest)
         <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-            {{ $purchaseOrder->pr_no }}
+            {{ $purchaseRequest->pr_no }}
         </div>
         @endforeach
     </div>
@@ -33,9 +33,19 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             Department
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseRequests as $index => $purchaseRequest)
         <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-            {{ $purchaseOrder->department }}
+            {{ $purchaseRequest->department }}
+        </div>
+        @endforeach
+    </div>
+    <div class="flex flex-col border border-solid shadow-sm basis-0 border-[color:var(--Neutral-Black-Default,#000)]">
+        <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.57] bg-slate-100 leading-[114%]">
+            Amount
+        </div>
+        @foreach ($purchaseRequests as $index => $purchaseRequest)
+        <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} aspect-[1.57]">
+            {{ $purchaseRequest->creatingPr ? $purchaseRequest->creatingPr->amount : '' }}
         </div>
         @endforeach
     </div>
@@ -43,11 +53,20 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.57] bg-slate-100 leading-[114%]">
             Status
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseRequests as $index => $purchaseRequest)
         <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} aspect-[1.57]">
-            {{ $purchaseOrder->status }}
+            {{ $purchaseRequest->status }}
         </div>
         @endforeach
     </div>
-
+    <div class="flex flex-col border border-solid shadow-sm basis-0 border-[color:var(--Neutral-Black-Default,#000)]">
+        <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.57] bg-slate-100 leading-[114%]">
+            Actions
+        </div>
+        @foreach ($purchaseRequests as $index => $purchaseRequest)
+        <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} aspect-[1.57]">
+            <a href="">View</a>
+        </div>
+        @endforeach
+    </div>
 </div>
