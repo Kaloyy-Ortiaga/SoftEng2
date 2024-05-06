@@ -19,7 +19,7 @@ class create_pr extends Model
      * @var string
      */
     protected $table = 'create_prs';
-
+    
     /**
      * The attributes that are mass assignable.
      *

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\ItemList;
+use App\Livewire\CreatePr;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/item-list', function () {
 
 
 
+
+
+Route::get('/create-pr', CreatePr::class)->name('create-pr');
 
 Route::get('/purchase-order', function () {
     return view('purchase-Order');
