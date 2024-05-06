@@ -68,17 +68,12 @@
                 <input type="text" name="date2" id="date2"
                     class="w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
             </div>
+        </div>
 
-        </form>
-    </div>
-
-
-    <div class="flex flex-column mt-9">
-        <div class="bg-blue-800 basis-1/12">
-            <button class=" w-[100px] h-9  justify-center font-medium text-white rounded-md shadow bg-black">
-                ADD ROW
-            </button>
-
+        <div class="flex flex-column mt-9">
+            <div>
+                @include('livewire.includes.pr-table')
+            </div>
         </div>
         <div class="bg-red-500 basis-11/12">
             @include('livewire.includes.pr-table')

@@ -16,7 +16,11 @@ class PurchaseOrder extends Component
     {
         $purchaseOrders = purchase_request::latest()->paginate(10);
 
+        $purchaseOrders = purchase_request::latest()->paginate(10);
+
         return view('livewire.purchase-order', [
+            'purchaseOrders' => $purchaseOrders,
+    ]);
 <<<<<<< HEAD
             'purchaseOrders' => purchase_request::search($this->search)->latest()-> get()
         ]);
