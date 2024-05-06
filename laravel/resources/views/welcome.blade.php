@@ -12,7 +12,7 @@
 <body>
 
     <livewire:purchase-order/>
-    {{-- <livewire:create-pr> --}}
+    <livewire:create-pr>
     <livewire:purchase-order-admin/>
     @livewireScripts
 </body>
