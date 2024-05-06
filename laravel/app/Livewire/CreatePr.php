@@ -9,6 +9,8 @@ use App\Models\PrsItem;
 
 class CreatePr extends Component
 {
+    public $layout = 'layouts.app';
+    public $createPr;
     public $department;
     public $pr_no;
     public $pr_date;
@@ -92,6 +94,11 @@ class CreatePr extends Component
     {
         $this->prsItems = [];
         $this->reset();
+    }
+
+    public function calculateTotalAmount()
+    {
+        return $this->prsItems()->sum('amount');
     }
 
     public function submit()

@@ -40,12 +40,12 @@
         @endforeach
     </div>
     <div class="flex flex-col border border-solid shadow-sm basis-0 border-[color:var(--Neutral-Black-Default,#000)]">
-        <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.57] bg-slate-100 leading-[114%]">
+        <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize  bg-slate-100 leading-[114%]">
             Amount
         </div>
         @foreach ($purchaseRequests as $index => $purchaseRequest)
         <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} ">
-            {{ $purchaseRequest->creatingPr->amount }}
+            {{ $purchaseRequest->creatingPr->prs_items_sum_amount ?? 0 }}
         </div>
         @endforeach
     </div>
@@ -60,12 +60,12 @@
         @endforeach
     </div>
     <div class="flex flex-col border border-solid shadow-sm basis-0 border-[color:var(--Neutral-Black-Default,#000)]">
-        <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.57] bg-slate-100 leading-[114%]">
+        <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize  bg-slate-100 leading-[114%]">
             Actions
         </div>
         @foreach ($purchaseRequests as $index => $purchaseRequest)
         <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} ">
-            <a href="">View</a>
+            <a href="{{ route('admin.pr', ['id' => $purchaseRequest->id]) }}" class="px-4 py-2 text-indigo-800">View</a>
         </div>
         @endforeach
     </div>

@@ -1,5 +1,10 @@
-<div>
-    <section class="mt-10">
+<div class="flex flex-col sm:flex-row">
+    <div>
+        <button wire:click="addRow" type="button"
+            class="px-8 py-3 mr-4 text-xs text-left text-white bg-black rounded-md hover:bg-black focus:outline-none focus:bg-black float: left">
+            <a class="whitespace-nowrap">ADD ROW</a>
+        </button>
+    </div>
         <div class="mx-auto max-w-screen-lg lg:px-1">
             <div class="bg-white dark:bg-white relative shadow-md sm:rounded-lg">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-2 border-black">
@@ -44,11 +49,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div>
-                    <button wire:click="addRow" type="button" class="px-4 py-2 text-white bg-black rounded-md hover:bg-black focus:outline-none focus:bg-black">
-                        ADD ROW
-                    </button>
-                </div>
             </div>
         </div>
     </section>

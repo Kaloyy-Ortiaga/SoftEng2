@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\ItemList;
 use App\Livewire\CreatePr;
+use App\Livewire\AdminPr;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,24 +19,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/supplier-list', function () {
-    return view('supplier-list');
-})->name('supplierList');
-
-Route::get('/item-list', function () {
-    return view('livewire.item-list'); 
-})->name('ItemList');
-
-
-
-
-
-Route::get('/create-pr', CreatePr::class)->name('create-pr');
-
 Route::get('/purchase-order', function () {
-    return view('purchase-Order');
-})->name('purchaseOrder');
+    return view('welcome');
+})->name('purchase-order');
 
-Route::get('/invoice-list', function () {
-    return view('invoice-ist');
-})->name('invoiceList');
+Route::get('/admin/pr/{id}', function ($id) {
+    return view('welcome', ['id' => $id]);
+})->name('admin.pr');
+
+Route::get('/purchase-order-admin', function () {
+    return view('welcome');
+})->name('purchase-order-admin');
+
+Route::get('/create-pr', function () {
+    return view('welcome');
+})->name('create-pr');

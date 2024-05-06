@@ -20,7 +20,7 @@
                             <div
                                 class="flex gap-5 justify-between -mt-4 -mb-4 whitespace-nowrap leading-[143%] max-md:flex-wrap max-md:max-w-full">
                                 @include('livewire.search-bar')
-                                <button  x-on:click="$dispatch('open-modal',{name: 'supplier'})"
+                                <button onclick="window.location.href='{{ route('create-pr') }}'"
                                     class="justify-center h-10 px-4 py-2 mt-3.5 font-medium text-white rounded-md shadow bg-zinc-900 w-226">
                                     CREATE PURCHASE REQUEST
                                 </button>

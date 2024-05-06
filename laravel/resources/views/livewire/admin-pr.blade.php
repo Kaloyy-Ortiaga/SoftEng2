@@ -9,7 +9,7 @@
 
                     <div class="flex flex-row justify-between">
                         <div class="mt-10 text-3xl font-semibold text-black max-md:max-w-full">
-                            PURCHASE REQUEST 
+                            PURCHASE REQUEST
                         </div>
                         <button
                             class=" w-[74px] h-9 mt-10 mr-5 justify-center font-medium text-white rounded-md shadow bg-indigo-800">
@@ -20,8 +20,10 @@
                     <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div> {{-- line --}}
                     <div
                         class=" px-16 py-12 mt-9 mb-[67px] h-full w-full text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ">
-                        {{-- white box container --}}
-                        @include('livewire.includes.creating-pr')
+
+                        @include('livewire.includes.admin.admin-creating-pr', ['createPr' => $createPr])
+
+
                     </div>
 
                 </div>
