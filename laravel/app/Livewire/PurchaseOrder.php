@@ -10,7 +10,7 @@ use Livewire\WithPagination;
 class PurchaseOrder extends Component
 {
     use WithPagination;
-    public $search; 
+    public $search;
     public $isAdmin = false;
     public function render()
     {
@@ -19,14 +19,8 @@ class PurchaseOrder extends Component
         $purchaseOrders = purchase_request::latest()->paginate(10);
 
         return view('livewire.purchase-order', [
-            'purchaseOrders' => $purchaseOrders,
-    ]);
-<<<<<<< HEAD
-            'purchaseOrders' => purchase_request::search($this->search)->latest()-> get()
+            'purchaseOrders' =>purchase_request::search($this->search)->latest()-> get(), $purchaseOrders
+            
         ]);
-=======
-            'purchaseOrders' => $purchaseOrders,
-    ]);
->>>>>>> 229c262b6a728f5875c94981d9bc17b4acd69a65
     }
 }
