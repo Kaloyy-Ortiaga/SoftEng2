@@ -18,52 +18,79 @@ class CreatePr extends Component
     public $requested_by;
     public $designation;
     public $purpose;
-    public $prsItems;
+    public $prsItems = [];
 
     protected $rules = [
         'department' => 'required',
         'pr_no' => 'required|unique:purchase_requests',
         'pr_date' => 'required|date',
         'section' => 'required',
-        'sai_no' => 'required',
+        'sai_no' => 'required|unique:create_prs', 
         'sai_date' => 'required|date',
         'requested_by' => 'required',
         'designation' => 'required',
         'purpose' => 'required',
     ];
 
+    
+    protected $messages = [
+        'department.required' => 'The department field is required.',
+        'pr_no.required' => 'The PR No. field is required.',
+        'pr_no.unique' => 'The PR No. already exists.',
+        'pr_date.required' => 'The PR Date field is required.',
+        'pr_date.date' => 'The PR Date must be a valid date.',
+        'section.required' => 'The section field is required.',
+        'sai_no.required' => 'The SAI No. field is required.',
+        'sai_no.unique' => 'The SAI No. already exists.',
+        'sai_date.required' => 'The SAI Date field is required.',
+        'sai_date.date' => 'The SAI Date must be a valid date.',
+        'requested_by.required' => 'The requested by field is required.',
+        'designation.required' => 'The designation field is required.',
+        'purpose.required' => 'The purpose field is required.',
+    ];
+
+    
+
     public function mount()
     {
-        $this->prsItems = [
-            ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => '']
-        ];
+        if (empty($this->prsItems)) {
+            $this->prsItems = [
+                ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => '']
+            ];
+        }
     }
 
     public function addRow()
     {
-        $this->prsItems[] = ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''];
+        if (is_array($this->prsItems)) {
+            $this->prsItems[] = ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''];
+        } else {
+            $this->prsItems = [
+                ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => '']
+            ];
+        }
     }
 
     public function deleteRow($index)
     {
-        if (count($this->prsItems) > 1) {
+        if (is_array($this->prsItems) && count($this->prsItems) > 1) {
             unset($this->prsItems[$index]);
             $this->prsItems = array_values($this->prsItems);
-        } else {
-            $this->resetRow($index);
+        } elseif (is_array($this->prsItems) && count($this->prsItems) === 1) {
+            $this->resetRow(0);
         }
     }
 
     public function resetRow($index)
     {
-        $this->prsItems[$index] = ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''];
+        if (is_array($this->prsItems)) {
+            $this->prsItems[$index] = ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''];
+        }
     }
 
     public function cancel()
     {
-        $this->prsItems = [
-            ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => '']
-        ];
+        $this->prsItems = [];
         $this->reset();
     }
 
@@ -102,7 +129,7 @@ class CreatePr extends Component
                 'item_description' => $item['item_description'],
                 'quantity' => $item['quantity'],
                 'unit_cost' => $item['unit_cost'],
-                'amount' => $item['quantity'] * $item['unit_cost'],
+                'amount' => floatval($item['quantity']) * floatval($item['unit_cost']),
             ]);
         }
 

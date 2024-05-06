@@ -57,7 +57,7 @@ class create_pr extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function createPrsItems(): HasMany
+    public function prsItems(): HasMany
     {
         return $this->hasMany(PrsItem::class);
     }

@@ -32,10 +32,10 @@
                                     <input type="text" wire:model="prsItems.{{ $index }}.item_description" class="w-full px-2 py-2 font-medium text-gray-900 bg-transparent border-0 focus:outline-none focus:ring-0">
                                 </td>
                                 <td class="px-1 py-3 border-r border-black">
-                                    <input type="number" wire:model="prsItems.{{ $index }}.quantity" class="w-full px-2 py-2 font-medium text-gray-900 bg-transparent border-0 focus:outline-none focus:ring-0">
+                                    <input type="number" wire:model="prsItems.{{ $index }}.quantity" class="w-full px-2 py-2 font-medium text-gray-900 bg-transparent border-0 focus:outline-none focus:ring-0 appearance-none">
                                 </td>
                                 <td class="px-1 py-3 border-r border-black">
-                                    <input type="number" wire:model="prsItems.{{ $index }}.unit_cost" class="w-full px-2 py-2 font-medium text-gray-900 bg-transparent border-0 focus:outline-none focus:ring-0">
+                                    <input type="number" wire:model="prsItems.{{ $index }}.unit_cost" class="w-full px-2 py-2 font-medium text-gray-900 bg-transparent border-0 focus:outline-none focus:ring-0 appearance-none ">
                                 </td>
                                 <td class="px-1 py-3">
                                     <input type="text" value="{{ floatval($item['quantity']) * floatval($item['unit_cost']) }}" class="w-full px-2 py-2 font-medium text-gray-900 bg-transparent border-0 focus:outline-none focus:ring-0" readonly>
