@@ -19,6 +19,67 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
+    <div>
+        <form action="" class="flex flex-col justify-between space-y-4 sm:flex-row sm:space-y-0">
+
+            <div class="flex flex-col space-y-2">
+                <label for="department" class="text-xl font-medium leading-none tracking-wide text-black capitalize">
+                    Department</label>
+                <input type="text" name="department" id="department"
+                    class="w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
+            </div>
+
+            <div class="flex flex-col space-y-2">
+                <label for="prNo" class="text-xl font-medium leading-none tracking-wide text-black capitalize">
+                    P.R No.</label>
+                <input type="text" name="prNo" id="prNo"
+                    class="w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
+            </div>
+
+            <div class="flex flex-col space-y-2">
+                <label for="date" class="text-xl font-medium leading-none tracking-wide text-black capitalize">
+                    Date</label>
+                <input type="text" name="date" id="date"
+                    class="w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
+            </div>
+
+        </form>
+    </div>
+
+    <div class="mt-4">
+        <form action="" class="flex flex-col justify-between space-y-4 sm:flex-row sm:space-y-0">
+
+            <div class="flex flex-col space-y-2">
+                <label for="section" class="text-xl font-medium leading-none tracking-wide text-black capitalize">
+                    Section </label>
+                <input type="text" name="section" id="section"
+                    class="w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
+            </div>
+
+            <div class="flex flex-col space-y-2">
+                <label for="saiNo" class="text-xl font-medium leading-none tracking-wide text-black capitalize">
+                    SAI No.</label>
+                <input type="text" name="saiNo" id="saiNo"
+                    class="w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
+            </div>
+
+            <div class="flex flex-col space-y-2">
+                <label for="date2" class="text-xl font-medium leading-none tracking-wide text-black capitalize">
+                    Date</label>
+                <input type="text" name="date2" id="date2"
+                    class="w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
+            </div>
+        </div>
+
+        <div class="flex flex-column mt-9">
+            <div>
+                @include('livewire.includes.pr-table')
+            </div>
+        </div>
+        <div class="bg-red-500 basis-11/12">
+            @include('livewire.includes.pr-table')
+=======
                 <div class="flex flex-col sm:flex-row">
                     <label for="pr_no" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
                         P.R No.
@@ -39,6 +100,7 @@
                     </div>
                 </div>
             </div>
+>>>>>>> 229c262b6a728f5875c94981d9bc17b4acd69a65
         </div>
 
         <div class="mt-4">

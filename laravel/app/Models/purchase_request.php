@@ -18,4 +18,9 @@ class purchase_request extends Model
     {
         return $this->hasOne(create_pr::class, 'pr_no', 'pr_no');
     }
+
+    public function scopeSearch($query, $value)
+    {
+        $query->where('date_created', 'like', "%{$value}%")->orWhere('pr_no', 'like', "%{$value}%")->orWhere('department', 'like', "%{$value}%")->orWhere('status', 'like', "%{$value}%");
+    }
 }

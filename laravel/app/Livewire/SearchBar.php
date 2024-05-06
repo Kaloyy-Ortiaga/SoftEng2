@@ -13,15 +13,6 @@ class SearchBar extends Component
 
     public function render()
     {
-        $results = [];
-
-        if (strlen($this->search) >= 1) {
-            $results = purchase_request::where('status', 'like', '%' . $this->search . '%')->limit(7)->get();
-        }
-
-
-        return view('livewire.search-bar', [
-            'users' => $results
-        ]);
+        return view('livewire.search-bar');
     }
 }
