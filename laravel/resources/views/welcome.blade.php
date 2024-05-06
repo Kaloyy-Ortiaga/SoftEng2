@@ -14,6 +14,8 @@
     <livewire:purchase-order/>
     <livewire:create-pr>
     <livewire:purchase-order-admin/>
+    <livewire:printrequest/>
+   
     @livewireScripts
 </body>
 
