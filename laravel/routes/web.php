@@ -32,11 +32,3 @@ Route::get('/item-list', function () {
 
 
 Route::get('/create-pr', CreatePr::class)->name('create-pr');
-
-Route::get('/purchase-order', function () {
-    return view('purchase-Order');
-})->name('purchaseOrder');
-
-Route::get('/invoice-list', function () {
-    return view('invoice-ist');
-})->name('invoiceList');

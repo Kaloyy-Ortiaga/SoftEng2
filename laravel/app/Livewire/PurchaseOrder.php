@@ -14,13 +14,12 @@ class PurchaseOrder extends Component
     public $isAdmin = false;
     public function render()
     {
-        $purchaseOrders = purchase_request::latest()->paginate(10);
-
-        $purchaseOrders = purchase_request::latest()->paginate(10);
+        $purchaseOrders = purchase_request::search($this->search)
+            ->latest()
+            ->paginate(7); // Paginate with 10 items per page
 
         return view('livewire.purchase-order', [
-            'purchaseOrders' =>purchase_request::search($this->search)->latest()-> get(), $purchaseOrders
-            
+            'purchaseOrders' => $purchaseOrders,
         ]);
     }
 }
