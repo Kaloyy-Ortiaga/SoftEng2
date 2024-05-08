@@ -17,7 +17,7 @@
                                 PRINT
                             </button>
                             <button 
-                                class=" w-[74px] h-9 mt-10 mr-2 justify-center font-medium text-white rounded-md shadow bg-black">
+                                class=" w-[74px] h-9 mt-10 mr-2 justify-center font-medium text-white rounded-md shadow bg-black" onclick="window.location.href='{{ route('purchase-order') }}'">
                                 BACK
                             </button>
                         </div>
