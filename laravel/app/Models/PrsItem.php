@@ -19,7 +19,7 @@ class PrsItem extends Model
         'amount',
     ];
     
-    public function createPr()
+        public function createPr()
     {
         return $this->belongsTo(create_pr::class, 'create_pr_id');
     }

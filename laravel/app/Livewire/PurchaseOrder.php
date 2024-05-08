@@ -9,15 +9,13 @@ use Livewire\WithPagination;
 
 class PurchaseOrder extends Component
 {
+    public $layout = 'layouts.app';
     use WithPagination;
     public $search;
     public $isAdmin = false;
     public function render()
-    {
-        $purchaseOrders = purchase_request::search($this->search)
-            ->latest()
-            ->paginate(7); // Paginate with 10 items per page
-
+{
+    $purchaseOrders = purchase_request::latest()->paginate(10);
         return view('livewire.purchase-order', [
             'purchaseOrders' => $purchaseOrders,
         ]);
