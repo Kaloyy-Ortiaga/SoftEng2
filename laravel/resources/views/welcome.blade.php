@@ -27,6 +27,8 @@
             <livewire:purchase-order-admin/>
         @elseif(Route::is('create-pr'))
             <livewire:create-pr/>
+        @elseif(Route::is('print-request'))
+            <livewire:print-request :id="$id"/>
         @else
             <div class="row">
                 <div class="col">

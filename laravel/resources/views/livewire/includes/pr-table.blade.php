@@ -11,7 +11,7 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th scope="col" class="w-1/12 px-4 py-3 border-r border-black">
-                                <span class="sr-only">Actions</span>
+                                <span class="sr-only m-1">Actions</span>
                             </th>
                             <th scope="col" class="w-2/12 px-4 py-3 border-r border-black">Stock No.</th>
                             <th scope="col" class="w-1/12 px-4 py-3 border-r border-black">Unit</th>
@@ -24,16 +24,16 @@
                     <tbody>
                         @foreach ($prsItems as $index => $item)
                             <tr class="border-b border-black">
-                                <td class="px-4 py-3 flex items-center justify-center border-r border-black">
+                                <td class="px-1 py-3 flex items-center justify-center border-r border-black">
                                     <button wire:click="deleteRow({{ $index }})" class="px-4 py-2 bg-red-500 text-white rounded">X</button>
                                 </td>
-                                <th scope="row" class="border-r border-black">
+                                <th scope="row" class="border-r px-1 py-3 border-black">
                                     <input type="text" wire:model="prsItems.{{ $index }}.stock_no" class="w-full px-2 py-2 font-medium text-gray-900 bg-transparent border-0 focus:outline-none focus:ring-0">
                                 </th>
                                 <td class="px-1 py-3 border-r border-black">
                                     <input type="text" wire:model="prsItems.{{ $index }}.unit" class="w-full px-2 py-2 font-medium text-gray-900 bg-transparent border-0 focus:outline-none focus:ring-0">
                                 </td>
-                                <td class="px-1 py-3 text-green-500 border-r border-black">
+                                <td class="px-1 py-3  border-r border-black">
                                     <input type="text" wire:model="prsItems.{{ $index }}.item_description" class="w-full px-2 py-2 font-medium text-gray-900 bg-transparent border-0 focus:outline-none focus:ring-0">
                                 </td>
                                 <td class="px-1 py-3 border-r border-black">

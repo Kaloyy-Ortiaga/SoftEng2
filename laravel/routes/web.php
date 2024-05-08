@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\CreatePr;
 use App\Livewire\AdminPr;
+use App\Livewire\PrintRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,9 @@ Route::get('/purchase-order-admin', function () {
 Route::get('/create-pr', function () {
     return view('welcome');
 })->name('create-pr');
+
+
+Route::get('/print-request/{id}', function ($id) {
+    return view('welcome', ['id' => $id]);
+})->name('print-request');
+

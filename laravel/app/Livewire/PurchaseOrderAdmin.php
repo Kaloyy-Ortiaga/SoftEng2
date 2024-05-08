@@ -8,6 +8,7 @@ use Livewire\Component;
 class PurchaseOrderAdmin extends Component
 {
     public $layout = 'layouts.app';
+    public $search;
     public function render()
     {
         $purchaseRequests = purchase_request::with(['creatingPr' => function ($query) {
@@ -15,7 +16,7 @@ class PurchaseOrderAdmin extends Component
         }])->latest()->get();
     
         return view('livewire.purchase-order-admin', [
-            'purchaseRequests' => $purchaseRequests,
+            'purchaseRequests' => purchase_request::search($this->search)->latest()-> get(), $purchaseRequests,
         ]);
     }
 }

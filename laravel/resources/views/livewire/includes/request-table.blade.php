@@ -49,5 +49,15 @@
         </div>
         @endforeach
     </div>
+    <div class="flex flex-col border border-solid shadow-sm basis-0 border-[color:var(--Neutral-Black-Default,#000)]">
+        <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize  bg-slate-100 leading-[114%]">
+            Action
+        </div>
+        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} ">
+            <a href="{{ route('print-request', ['id' => $purchaseOrder->id]) }}" class=" py-2 text-indigo-800">Print</a>
+        </div>
+        @endforeach
+    </div>
 
 </div>
