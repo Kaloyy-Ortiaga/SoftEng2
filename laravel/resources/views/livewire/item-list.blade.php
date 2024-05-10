@@ -71,46 +71,38 @@
             <div class="flex flex-col ml-9 w-[84%] max-md:ml-0 max-md:w-full">
                 <div class="flex flex-col self-stretch my-auto max-md:mt-10 max-md:max-w-full">
                     <div class="-mt-10 text-3xl font-semibold text-black max-md:max-w-full">
-                        PURCHASE ORDER
+                        ITEM LIST
                     </div>
                     <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>
                     <div
                         class="flex justify-center items-center px-16 py-12 mt-9 text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5 max-md:max-w-full">
                         <div class="flex flex-col mt-5 mb-28 max-w-full w-[1065px] max-md:mb-10">
                             <div
-<<<<<<< HEAD
-                                class="flex gap-5 justify-between -mt-4 -mb-4 whitespace-nowrap leading-[143%] max-md:flex-wrap max-md:max-w-full">
-                                @include('livewire.search-bar')
-                                <button onclick="window.location.href='{{ route('create-pr') }}'"
-                                    class="justify-center h-10 px-4 py-2 mt-3.5 font-medium text-white rounded-md shadow bg-zinc-900 w-226">
-                                    CREATE PURCHASE REQUEST
-=======
                                 class="flex gap-5 justify-between whitespace-nowrap leading-[143%] max-md:flex-wrap max-md:max-w-full">
                                 <div
                                     class="justify-center px-3 py-2 bg-white rounded-md border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)] text-ellipsis text-zinc-500">
                                     Search
                                 </div>
-                                <button x-on:click="$dispatch('open-suppliermodal')"
+                                <button x-on:click="$dispatch('open-modal',{name: 'item'})"
                                     class="justify-center px-4 py-2 font-medium text-white rounded-md shadow bg-zinc-900">
-                                    REQUEST
->>>>>>> parent of 5903152 (Merge pull request #2 from Kaloyy-Ortiaga/anotherbranch)
+                                    ADD SUPPLIER
                                 </button>
                             </div>
                             <div
-                                class="flex justify-between gap-0 mt-20 whitespace-nowrap max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+                                 class="flex justify-between gap-0 mt-20 whitespace-nowrap max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
                                 <div
                                     class="flex flex-col border border-solid shadow-sm basis-0 border-[color:var(--Neutral-Black-Default,#000)]">
                                     <div
-                                        class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.3] bg-slate-100 leading-[114%]">
+                                        class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.68] bg-slate-100 leading-[114%]">
                                         no.
                                     </div>
-                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.3]">1</div>
-                                    <div class="justify-center px-2 py-2.5 aspect-[1.3] bg-slate-50">2</div>
-                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.3]">Text</div>
-                                    <div class="justify-center px-2 py-2.5 aspect-[1.3] bg-slate-50">Text</div>
-                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.3]">Text</div>
-                                    <div class="justify-center px-2 py-2.5 aspect-[1.3] bg-slate-50">Text</div>
-                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.3]">Text</div>
+                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.68]">1</div>
+                                    <div class="justify-center px-2 py-2.5 aspect-[1.68] bg-slate-50">2</div>
+                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.68]">Text</div>
+                                    <div class="justify-center px-2 py-2.5 aspect-[1.68] bg-slate-50">Text</div>
+                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.68]">Text</div>
+                                    <div class="justify-center px-2 py-2.5 aspect-[1.68] bg-slate-50">Text</div>
+                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.68]">Text</div>
                                 </div>
                                 <div
                                     class="flex flex-col flex-1 border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)]">
@@ -130,10 +122,10 @@
                                     class="flex flex-col flex-1 border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)]">
                                     <div
                                         class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
-                                        PO#
+                                        Item name
                                     </div>
-                                    <div class="justify-center px-2 py-2.5 bg-white">PO-123456789</div>
-                                    <div class="justify-center px-2 py-2.5 bg-slate-50">PO-123456780</div>
+                                    <div class="justify-center px-2 py-2.5 bg-white">Sample item 1</div>
+                                    <div class="justify-center px-2 py-2.5 bg-slate-50">Sample item 2</div>
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
                                     <div class="justify-center px-2 py-2.5 bg-slate-50">Text</div>
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
@@ -144,38 +136,10 @@
                                     class="flex flex-col flex-1 border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)]">
                                     <div
                                         class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
-                                        Supplier name
+                                        description
                                     </div>
-                                    <div class="justify-center px-2 py-2.5 bg-white">Supplier name 1</div>
-                                    <div class="justify-center px-2 py-2.5 bg-slate-50">Supplier name 2</div>
-                                    <div class="justify-center px-2 py-2.5 bg-white">Text</div>
-                                    <div class="justify-center px-2 py-2.5 bg-slate-50">Text</div>
-                                    <div class="justify-center px-2 py-2.5 bg-white">Text</div>
-                                    <div class="justify-center px-2 py-2.5 bg-slate-50">Text</div>
-                                    <div class="justify-center px-2 py-2.5 bg-white">Text</div>
-                                </div>
-                                <div
-                                    class="flex flex-col border border-solid shadow-sm basis-0 border-[color:var(--Neutral-Black-Default,#000)]">
-                                    <div
-                                        class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.57] bg-slate-100 leading-[114%]">
-                                        item
-                                    </div>
-                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.57]">1</div>
-                                    <div class="justify-center px-2 py-2.5 aspect-[1.57] bg-slate-50">2</div>
-                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.57]">Text</div>
-                                    <div class="justify-center px-2 py-2.5 aspect-[1.57] bg-slate-50">Text</div>
-                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.57]">Text</div>
-                                    <div class="justify-center px-2 py-2.5 aspect-[1.57] bg-slate-50">Text</div>
-                                    <div class="justify-center px-2 py-2.5 bg-white aspect-[1.57]">Text</div>
-                                </div>
-                                <div
-                                    class="flex flex-col flex-1 border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)]">
-                                    <div
-                                        class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
-                                        Amount
-                                    </div>
-                                    <div class="justify-center px-2 py-2.5 bg-white">P 1,252,048.00</div>
-                                    <div class="justify-center px-2 py-2.5 bg-slate-50">P 100,000.00</div>
+                                    <div class="justify-center px-2 py-2.5 bg-white">1x1</div>
+                                    <div class="justify-center px-2 py-2.5 bg-slate-50">100cm x 200cm</div>
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
                                     <div class="justify-center px-2 py-2.5 bg-slate-50">Text</div>
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
@@ -186,10 +150,10 @@
                                     class="flex flex-col flex-1 border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)]">
                                     <div
                                         class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
-                                        status
+                                        Control no.
                                     </div>
-                                    <div class="justify-center px-2 py-2.5 bg-white">Pending</div>
-                                    <div class="justify-center px-2 py-2.5 bg-slate-50">Approved</div>
+                                    <div class="justify-center px-2 py-2.5 bg-white">Cno.123456</div>
+                                    <div class="justify-center px-2 py-2.5 bg-slate-50">Cno.165788</div>
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
                                     <div class="justify-center px-2 py-2.5 bg-slate-50">Text</div>
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
@@ -202,8 +166,17 @@
                                         class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
                                         action
                                     </div>
-                                    <div class="h-10 bg-white shrink-0"></div>
-                                    <div class="h-10 shrink-0 bg-slate-50"></div>
+                                     <div class="flex justify-between gap-0 py-2.5 bg-white">
+                                        <button x-on:click="$dispatch('open-modal',{name: 'edititem'})"
+                                            class="ml-2 leading-5 text-cyan-700">
+                                            Edit
+                                            <span class="-ml-1 text-black">/</span>
+                                        </button>
+                                        <div class="flex-auto text-cyan-700 leading-[143%]">
+                                            View
+                                        </div>
+                                    </div>
+                                    <div class="justify-center px-2 py-2.5 bg-slate-50">Edit/View</div>
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
                                     <div class="justify-center px-2 py-2.5 bg-slate-50">Text</div>
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
@@ -211,7 +184,6 @@
                                     <div class="justify-center px-2 py-2.5 bg-white">Text</div>
                                 </div>
                             </div>
-
 
                             <div class="mt-6 leading-[143%] text-gray-800 text-opacity-80 max-md:max-w-full">
                                 Showing 1 to 2 of 2 entries

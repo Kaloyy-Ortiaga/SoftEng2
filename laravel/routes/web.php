@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 
+=======
+use App\Livewire\ItemList;
+>>>>>>> parent of 5903152 (Merge pull request #2 from Kaloyy-Ortiaga/anotherbranch)
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +43,14 @@ Route::get('/print-request/{id}', function ($id) {
     return view('welcome', ['id' => $id]);
 })->name('print-request');
 
+<<<<<<< HEAD
+=======
+
+Route::get('/purchase-order', function () {
+    return view('purchase-Order');
+})->name('purchaseOrder');
+
+Route::get('/invoice-list', function () {
+    return view('invoice-ist');
+})->name('invoiceList');
+>>>>>>> parent of 5903152 (Merge pull request #2 from Kaloyy-Ortiaga/anotherbranch)

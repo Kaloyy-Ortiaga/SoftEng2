@@ -2,16 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\BelongsToRelationship;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class create_pr extends Model
-{  
+{
     use HasFactory;
+<<<<<<< HEAD
 
     /**
      * The table associated with the model.
@@ -62,4 +59,6 @@ class create_pr extends Model
         return $this->hasMany(PrsItem::class);
     }
 
+=======
+>>>>>>> parent of 5903152 (Merge pull request #2 from Kaloyy-Ortiaga/anotherbranch)
 }

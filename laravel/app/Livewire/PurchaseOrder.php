@@ -2,13 +2,11 @@
 
 namespace App\Livewire;
 
-use App\Models\purchase_request;
 use Livewire\Component;
-use Livewire\WithPagination;
-
 
 class PurchaseOrder extends Component
 {
+<<<<<<< HEAD
     public $layout = 'layouts.app';
     use WithPagination;
     public $search;
@@ -20,5 +18,10 @@ class PurchaseOrder extends Component
             'purchaseOrders' =>purchase_request::search($this->search)->latest()-> get(), $purchaseOrders
             
         ]);
+=======
+    public function render()
+    {
+        return view('livewire.purchase-order');
+>>>>>>> parent of 5903152 (Merge pull request #2 from Kaloyy-Ortiaga/anotherbranch)
     }
 }
