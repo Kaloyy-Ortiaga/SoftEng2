@@ -15,7 +15,7 @@
                             <option value="CS">CS</option>
                             <option value="CISTM">CISTM</option>
                         </select>
-                        @error('department') <span class="mt-1 text-red-500">{{ $message }}</span> @enderror
+                        @error('department') <span class="text-red-500 mt-1">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
@@ -25,7 +25,7 @@
                     </label>
                     <div class="flex flex-col">
                         <input type="text" wire:model="pr_no" id="pr_no" class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
-                        @error('pr_no') <span class="mt-1 text-red-500">{{ $message }}</span> @enderror
+                        @error('pr_no') <span class="text-red-500 mt-1">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
@@ -49,12 +49,12 @@
                     </label>
                     <div class="flex flex-col">
                     <input type="text" wire:model="section" id="section" class="block w-full sm:w-[250px] h-9 border-black ml-12 pl-2 mr-10 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
-                    @error('section') <span class="pr-4 text-red-500">{{ $message }}</span> @enderror
+                    @error('section') <span class="text-red-500 pr-4">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row">
-                    <label for="sai_no" class="pr-4 text-lg font-medium leading-none tracking-wide text-black capitalize ">
+                    <label for="sai_no" class=" pr-4 text-lg font-medium leading-none tracking-wide text-black capitalize">
                         SAI No.
                     </label>
                     <div class="flex flex-col">

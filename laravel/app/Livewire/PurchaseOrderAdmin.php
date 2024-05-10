@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Models\purchase_request;
 use Livewire\Component;
-use Livewire\WithPagination;
 
 class PurchaseOrderAdmin extends Component
 {

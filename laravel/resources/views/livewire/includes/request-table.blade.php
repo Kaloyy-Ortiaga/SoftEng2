@@ -29,12 +29,12 @@
         </div>
         @endforeach
     </div>
-    <div class="flex flex-col flex-1 border  border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)]">
+    <div class="flex flex-col flex-1 border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)]">
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             Department
         </div>
         @foreach ($purchaseOrders as $index => $purchaseOrder)
-        <div class="justify-center px-2 py-2.5  {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
+        <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
             {{ $purchaseOrder->department }}
         </div>
         @endforeach
@@ -55,7 +55,7 @@
         </div>
         @foreach ($purchaseOrders as $index => $purchaseOrder)
         <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} ">
-            <a href="{{ route('print-request', ['id' => $purchaseOrder->id]) }}" class="py-2 text-indigo-800 ">Print</a>
+            <a href="{{ route('print-request', ['id' => $purchaseOrder->id]) }}" class=" py-2 text-indigo-800">Print</a>
         </div>
         @endforeach
     </div>
