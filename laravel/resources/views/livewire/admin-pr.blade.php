@@ -13,7 +13,9 @@
                         </div>
                         <button
                             class=" w-[74px] h-9 mt-10 mr-5 justify-center font-medium text-white rounded-md shadow bg-indigo-800">
-                            PRINT
+                            <a href="{{ route('print-request', ['id' => $createPr->purchaseRequest->id]) }}"  class="w-[74px] h-9 mt-10  justify-center font-medium text-white rounded-md shadow bg-indigo-800">
+                                PRINT
+                            </a>
                         </button>
                     </div>
 

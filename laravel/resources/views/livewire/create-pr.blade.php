@@ -11,10 +11,7 @@
                         <div class="mt-10 text-3xl font-semibold text-black max-md:max-w-full">
                             PURCHASE REQUEST 
                         </div>
-                        <button
-                            class=" w-[74px] h-9 mt-10 mr-5 justify-center font-medium text-white rounded-md shadow bg-indigo-800">
-                            PRINT
-                        </button>
+
                     </div>
 
                     <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div> {{-- line --}}
