@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\CreatePr;
-use App\Livewire\AdminPr;
-use App\Livewire\PrintRequest;
+
 
 /*
 |--------------------------------------------------------------------------
