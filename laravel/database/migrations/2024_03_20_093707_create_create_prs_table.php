@@ -12,26 +12,26 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('create_prs', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('stock_no')->unsigned();
-            $table->string('unit')->nullable();
-            $table->string('item_description');
-            $table->integer('quantity');
-            $table->decimal('unit_cost', 10, 2);
-            $table->decimal('amount', 10, 2);
+            $table->id();
+            $table->unsignedBigInteger('purchase_request_id');
             $table->enum('department', ['CHASS', 'CET', 'CN', 'CS', 'CISTM']);
-            $table->bigInteger('pr_no')->unsigned();
+            $table->string('pr_no');
             $table->date('pr_date');
             $table->string('section');
-            $table->integer('sai_no')->unsigned();
+            $table->string('sai_no');
             $table->date('sai_date');
-            $table->string('requested');
+            $table->string('requested_by');
             $table->string('designation');
             $table->string('purpose');
+            $table->decimal('total_amount', 10, 2)->nullable();
+            $table->string('approved_by')->nullable(); 
+            $table->string('approved_designation')->nullable(); 
+            $table->text('note')->nullable(); 
             $table->timestamps();
             
             // Foreign key constraint
-            $table->foreign('pr_no')->references('id')->on('create_pr')->onDelete('cascade');
+            $table->foreign('pr_no')->references('pr_no')->on('purchase_requests')->onDelete('cascade');
+            $table->foreign('purchase_request_id')->references('id')->on('purchase_requests')->onDelete('cascade');
         });
     }
 
