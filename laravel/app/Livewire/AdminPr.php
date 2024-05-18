@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\create_pr;
 use Livewire\Component;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminPr extends Component
 {
@@ -31,15 +32,17 @@ class AdminPr extends Component
             'approvedDesignation' => 'required_if:status,approved',
             'note' => 'nullable',
         ]);
-
+    
         $this->createPr->purchaseRequest->status = $this->status;
         $this->createPr->purchaseRequest->save();
+    
         $this->createPr->approved_by = $this->approvedBy;
         $this->createPr->approved_designation = $this->approvedDesignation;
         $this->createPr->note = $this->note;
         $this->createPr->push();
-
-        // Redirect or show success message
+    
+        // Redirect to the desired route
+        return Redirect::route('purchase-order-admin');
     }
 
     public function render()

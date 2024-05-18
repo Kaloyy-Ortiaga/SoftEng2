@@ -1,52 +1,52 @@
 <div class="flex flex-col mt-2 -ml-4 bg-white">
     <form wire:submit.prevent="updatePr">
         <div>
-            <div class="flex flex-row justify-between">
+            <div class="flex flex-row justify-between pl-1 pr-16">
                 <div class="flex flex-col sm:flex-row">
-                    <label for="department" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
+                    <label for="department" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize ">
                         Department
                     </label>
-                    <input type="text" value="{{ $createPr->department}}" readonly class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                    <input type="text" value="{{ $createPr->department}}" readonly class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                 </div>
 
-                <div class="flex flex-col sm:flex-row">
-                    <label for="pr_no" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
+                <div class="flex flex-col sm:flex-row ">
+                    <label for="pr_no" class="py-2 pr-5 text-xl font-medium leading-none tracking-wide text-black capitalize">
                         P.R No.
                     </label>
-                    <input type="text" value="{{ $createPr->pr_no }}" readonly class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                    <input type="text" value="{{ $createPr->pr_no }}" readonly class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                 </div>
 
                 <div class="flex flex-col sm:flex-row">
                     <label for="pr_date" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
                         Date
                     </label>
-                    <input type="text" value="{{ $createPr->pr_date }}" readonly class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                    <input type="text" value="{{ $createPr->pr_date }}" readonly class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                 </div>
             </div>
         </div>
 
         <div class="mt-4">
             <div class="flex flex-row">
-                <div class="flex flex-col sm:flex-row">
+                <div class="flex flex-col pl-12 sm:flex-row">
                     <label for="section" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
                         Section
                     </label>
                     <div class="flex flex-col">
-                        <input type="text" value="{{ $createPr->section }}" readonly class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                        <input type="text" value="{{ $createPr->section }}" readonly class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                 </div>
 
-                <div class="flex flex-col sm:flex-row">
-                    <label for="sai_no" class=" pr-4 text-lg font-medium leading-none tracking-wide text-black capitalize">
+                <div class="flex flex-col pl-16 sm:flex-row">
+                    <label for="sai_no" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
                         SAI No.
                     </label>
-                    <input type="text" value="{{ $createPr->sai_no }}" readonly class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                    <input type="text" value="{{ $createPr->sai_no }}" readonly class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                 </div>
 
-                <div class="flex flex-col sm:flex-row">
-                    <label for="sai_date" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
+                <div class="flex flex-col pl-16 sm:flex-row">
+                    <label for="sai_date" class="py-2 pr-3.5 text-xl font-medium leading-none tracking-wide text-black capitalize">
                         Date
                     </label>
-                    <input type="text" value="{{ $createPr->sai_date }}" readonly class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                    <input type="text" value="{{ $createPr->sai_date }}" readonly class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                 </div>
             </div>
         </div>
@@ -93,14 +93,14 @@
                     </label>
                     <input type="text" value="{{ $createPr->requested_by }}" readonly class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                 </div>
-                <div class="flex items-center mt-4">
-                    <label for="designation" class="block mr-2 font-bold text-gray-700">
+                <div class="flex items-center mt-4 mr-2">
+                    <label for="designation" class="block mr-5 font-bold text-gray-700">
                         Designation:
                     </label>
                     <input type="text" value="{{ $createPr->designation }}" readonly class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                 </div>
-                <div class="flex items-center">
-                    <label for="approvedBy" class="block mr-2 font-bold text-gray-700">
+                <div class="flex items-center mt-4 -ml-1">
+                    <label for="approvedBy" class="block mr-5 font-bold text-gray-700">
                         Approved by:
                     </label>
                     <div class="flex flex-col">
@@ -108,8 +108,8 @@
                     @error('approvedBy') <span class="text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
-                <div class="flex items-center mt-4">
-                    <label for="approvedDesignation" class="block mr-2 font-bold text-gray-700">
+                <div class="flex items-center mt-4 -ml-0.5">
+                    <label for="approvedDesignation" class="block mr-6 font-bold text-gray-700">
                         Designation:
                     </label>
                     <div class="flex flex-col">

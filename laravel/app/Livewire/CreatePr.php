@@ -20,6 +20,7 @@ class CreatePr extends Component
     public $requested_by;
     public $designation;
     public $purpose;
+    public $newStatus;
     public $prsItems = [];
 
     protected $rules = [

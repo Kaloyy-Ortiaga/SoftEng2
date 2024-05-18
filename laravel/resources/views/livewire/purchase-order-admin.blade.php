@@ -27,23 +27,12 @@
                             @include('livewire.includes.admin.request-table-admin')
 
 
-                            <div class="mt-6 leading-[143%] text-gray-800 text-opacity-80 max-md:max-w-full">
-                                Showing 1 to 2 of 2 entries
+                             <div class="mt-6 leading-[143%] text-gray-800 text-opacity-80 max-md:max-w-full">
+                                Showing {{ $purchaseRequests->firstItem() }} to {{ $purchaseRequests->lastItem() }} of
+                                {{ $purchaseRequests->total() }} entries
                             </div>
                             <div class="flex self-end gap-0 mt-8 text-zinc-500">
-                                <div
-                                    class="grow justify-center px-3 py-2 bg-white rounded-md border border-solid shadow-sm border-[color:var(--Neutral-Black-Default,#000)] leading-[143%] text-ellipsis">
-                                    PREVIOUS
-                                </div>
-                                <div
-                                    class="justify-center px-4 py-2 text-xl font-medium leading-5 text-white whitespace-nowrap rounded-md shadow aspect-[1.17] bg-zinc-900">
-                                    1
-                                </div>
-                                <div
-                                    class="justify-center py-2 pl-3 leading-5 bg-white rounded-md border border-solid shadow-sm aspect-[1.94] border-[color:var(--Neutral-Black-Default,#000)] text-ellipsis">
-                                    NEXT
-                                    <br />
-                                </div>
+                                {{ $purchaseRequests->links('vendor.pagination.custom') }}
                             </div>
                         </div>
                     </div>
