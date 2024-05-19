@@ -27,11 +27,11 @@
 
         <div class="mt-4">
             <div class="flex flex-row">
-                <div class="flex flex-col pl-12 sm:flex-row">
+                <div class="flex flex-col pl-1 sm:flex-row">
                     <label for="section" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
                         Section
                     </label>
-                    <div class="flex flex-col">
+                    <div class="flex flex-col pl-11">
                         <input type="text" value="{{ $createPr->section }}" readonly class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                 </div>
 
