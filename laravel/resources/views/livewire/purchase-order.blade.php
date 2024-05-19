@@ -3,8 +3,8 @@
 
     @include('livewire.includes.header')
 
-    <div class="w-full pr-14 bg-zinc-300 max-md:pr-5 max-md:max-w-full">
-        <div class="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
+    <div class="flex flex-col w-full pr-14 bg-zinc-300 max-md:pr-5 max-md:ml-0 max-md:max-w-full">
+        <div class="flex gap-5 max-md:flex-col max-md:gap-0 max-md:max-w-full">
 
             @include('livewire.includes.sides')
 

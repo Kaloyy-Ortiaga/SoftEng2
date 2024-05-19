@@ -9,22 +9,24 @@
 
                     <div class="flex flex-row justify-between">
                         <div class="mt-10 text-3xl font-semibold text-black max-md:max-w-full">
-                            PURCHASE REQUEST 
+                            PURCHASE REQUEST
                         </div>
                         <div>
                             <button
-                                class=" w-[74px] h-9 mt-10 mr-3 justify-center font-medium text-white rounded-md shadow bg-indigo-800">
+                                class=" w-[74px] h-9 mt-10 mr-3 justify-center font-medium text-white rounded-md shadow bg-indigo-800"
+                                onclick="printContent()">
                                 PRINT
                             </button>
-                            <button 
-                                class=" w-[74px] h-9 mt-10 mr-2 justify-center font-medium text-white rounded-md shadow bg-black" onclick="goBack()">
+                            <button
+                                class=" w-[74px] h-9 mt-10 mr-2 justify-center font-medium text-white rounded-md shadow bg-black"
+                                onclick="goBack()">
                                 BACK
                             </button>
                         </div>
                     </div>
 
                     <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div> {{-- line --}}
-                    <div
+                    <div id="printContent"
                         class=" px-16 py-12 mt-9 mb-[67px] h-full w-full text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ">
                         @include('livewire.includes.print-content', ['purchaseOrder' => $purchaseOrder])
                     </div>
@@ -40,11 +42,19 @@
 <script>
     function goBack() {
         var previousPage = document.referrer;
-        
+
         if (previousPage.includes('/admin/pr/')) {
             window.location.href = previousPage;
         } else {
             window.location.href = '{{ route('purchase-order') }}';
         }
+    }
+
+    function printContent() {
+        var printContent = document.getElementById('printContent').innerHTML;
+        var originalContent = document.body.innerHTML;
+        document.body.innerHTML = printContent;
+        window.print();
+        document.body.innerHTML = originalContent;
     }
 </script>

@@ -1,3 +1,20 @@
+/* app.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add your custom styles here */
+@media print {
+    /* Hide headers and footers */
+    @page {
+        size: auto; /* Set paper size */
+        margin: 0; /* Remove default margins */
+    }
+    body {
+        margin: 2; /* Remove default body margins */
+    }
+    header, footer {
+        display: none; /* Hide headers and footers */
+    }
+}

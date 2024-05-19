@@ -1,10 +1,10 @@
-<div>
+<div class="w-full h-full px-6 pt-6 text-sm bg-white">
     <div class="flex justify-center">
-        <div class="flex items-center gap-5">
+        <div class="flex gap-1 item-center">
             <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/56d0e7314cf49885a03268756804ff4b8e88a4fe8089ee894995b314dd66dbe0?apiKey=19339f2aa9954834ba3c5156652a7fa7&" alt="Logo" class="w-[100px] h-[100px] mr-8">
             <div class="flex flex-col items-center ">
-                <h2 class="text-2xl font-bold mb-2">PURCHASE REQUEST</h2>
-                <h3 class="text-xl font-bold mb-1">PAMANTASAN NG LUNGSOD NG MAYNILA</h3>
+                <h2 class="mb-2 text-2xl font-bold">PURCHASE REQUEST</h2>
+                <h3 class="mb-1 text-xl font-bold">PAMANTASAN NG LUNGSOD NG MAYNILA</h3>
                 <p class="text-lg italic">Intramuros, Manila</p>  
             </div>
         </div>  
@@ -27,7 +27,7 @@
         </div>
 
         <!-- Item details table -->
-        <table class="w-full text-sm text-left text-black dark:text-gray-400 border-2 border-black mt-10 mb-12">
+        <table class="w-full mt-10 mb-12 text-sm text-left text-black border-2 border-black dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="w-2/12 px-4 py-3 border-r border-black">Stock No.</th>
@@ -40,8 +40,8 @@
             </thead>
             <tbody>
                 @foreach ($purchaseOrder->creatingPr->prsItems as $index => $item)
-                    <tr class="border-b border-black text-black">
-                        <th scope="row" class="border-r border-black px-4">
+                    <tr class="text-black border-b border-black">
+                        <th scope="row" class="px-4 border-r border-black">
                             {{ $item->stock_no }}
                         </th>
                         <td class="px-4 py-3 border-r border-black">
@@ -61,8 +61,8 @@
                         </td>
                     </tr>
                 @endforeach
-                <tr class="border-b border-black text-black ">
-                    <td colspan="5" class="px-1 py-3 border-r border-black font-bold "></td>
+                <tr class="text-black border-b border-black ">
+                    <td colspan="5" class="px-1 py-3 font-bold border-r border-black "></td>
                     <td class="px-4 py-3 font-bold">
                         Total: {{ $purchaseOrder->creatingPr->prsItems->sum('amount') }}
                     </td>
