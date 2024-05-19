@@ -6,8 +6,8 @@
                     <label for="department" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
                         Department
                     </label>
-                    <div class="flex flex-col">
-                        <select wire:model="department" id="department" class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                    <div class="flex flex-col -pr-2">
+                        <select wire:model="department" id="department" class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                             <option value="" disabled selected>Select department</option>
                             <option value="CHASS">CHASS</option>
                             <option value="CET">CET</option>
@@ -15,7 +15,7 @@
                             <option value="CS">CS</option>
                             <option value="CISTM">CISTM</option>
                         </select>
-                        @error('department') <span class="text-red-500 mt-1">{{ $message }}</span> @enderror
+                        @error('department') <span class="mt-1 text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
@@ -24,8 +24,8 @@
                         P.R No.
                     </label>
                     <div class="flex flex-col">
-                        <input type="text" wire:model="pr_no" id="pr_no" class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
-                        @error('pr_no') <span class="text-red-500 mt-1">{{ $message }}</span> @enderror
+                        <input type="text" wire:model="pr_no" id="pr_no" class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                        @error('pr_no') <span class="mt-1 text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                         Date
                     </label>
                     <div class="flex flex-col">
-                        <input type="date" wire:model="pr_date" id="pr_date" class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                        <input type="date" wire:model="pr_date" id="pr_date" class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                         @error('pr_date') <span class="text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
@@ -43,32 +43,32 @@
 
         <div class="mt-4">
             <div class="flex flex-row">
-                <div class="flex flex-col sm:flex-row">
+                <div class="flex flex-col -pr-4 sm:flex-row">
                     <label for="section" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
                         Section
                     </label>
-                    <div class="flex flex-col">
-                    <input type="text" wire:model="section" id="section" class="block w-full sm:w-[250px] h-9 border-black ml-12 pl-2 mr-10 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
-                    @error('section') <span class="text-red-500 pr-4">{{ $message }}</span> @enderror
+                    <div class="flex flex-col pr-9">
+                    <input type="text" wire:model="section" id="section" class="block w-full sm:w-[200px] h-9 border-black ml-12 pl-2 mr-10 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                    @error('section') <span class="pr-4 text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
-                <div class="flex flex-col sm:flex-row">
-                    <label for="sai_no" class=" pr-4 text-lg font-medium leading-none tracking-wide text-black capitalize">
+                <div class="flex flex-col pl-6 sm:flex-row">
+                    <label for="sai_no" class="pt-2 text-lg font-medium leading-none tracking-wide text-black capitalize ">
                         SAI No.
                     </label>
-                    <div class="flex flex-col">
-                        <input type="text" wire:model="sai_no" id="sai_no" class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip mr-10">
+                    <div class="flex flex-col pl-5">
+                        <input type="text" wire:model="sai_no" id="sai_no" class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip mr-10">
                         @error('sai_no') <span class="text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row">
-                    <label for="sai_date" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize">
+                    <label for="sai_date" class="py-2 pr-4 text-xl font-medium leading-none tracking-wide text-black capitalize pl-14">
                         Date
                     </label>
                     <div class="flex flex-col">
-                        <input type="date" wire:model="sai_date" id="sai_date" class="block w-full sm:w-[250px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
+                        <input type="date" wire:model="sai_date" id="sai_date" class="block w-full sm:w-[200px] h-9 border-black ml-1 pl-2 justify-center ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-white border rounded-md shadow gap-2 text-black text-base text-clip">
                         @error('sai_date') <span class="text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <div class="flex items-center mt-4">
-                    <label for="designation" class="block mr-2 font-bold text-gray-700">
+                    <label for="designation" class="block mr-5 font-bold text-gray-700">
                         Designation:
                     </label>
                     <div class="flex flex-col">
