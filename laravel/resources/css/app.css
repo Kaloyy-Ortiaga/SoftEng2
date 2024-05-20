@@ -18,3 +18,11 @@
         display: none; /* Hide headers and footers */
     }
 }
+
+.default-select {
+    color: #999;
+}
+
+.default-select option:checked {
+    color: inherit;
+}
