@@ -28,14 +28,14 @@ class CreatePr extends Component
         'pr_no' => 'required|unique:purchase_requests',
         'pr_date' => 'required|date',
         'section' => 'required',
-        'sai_no' => 'required|unique:create_prs', 
+        'sai_no' => 'required|unique:create_prs',
         'sai_date' => 'required|date',
         'requested_by' => 'required',
         'designation' => 'required',
         'purpose' => 'required',
     ];
 
-    
+
     protected $messages = [
         'department.required' => 'The department field is required.',
         'pr_no.required' => 'The PR No. field is required.',
@@ -52,7 +52,7 @@ class CreatePr extends Component
         'purpose.required' => 'The purpose field is required.',
     ];
 
-    
+
 
     public function mount()
     {
@@ -130,21 +130,25 @@ class CreatePr extends Component
         ]);
 
         foreach ($this->prsItems as $item) {
+            $unit_cost = !empty($item['unit_cost']) ? floatval($item['unit_cost']) : 0.0;
+    
             PrsItem::create([
                 'create_pr_id' => $createPr->id,
                 'stock_no' => $item['stock_no'],
                 'unit' => $item['unit'],
                 'item_description' => $item['item_description'],
-                'quantity' => $item['quantity'],
-                'unit_cost' => $item['unit_cost'],
-                'amount' => floatval($item['quantity']) * floatval($item['unit_cost']),
+                'quantity' => intval($item['quantity']),
+                'unit_cost' => $unit_cost,
+                'amount' => intval($item['quantity']) * $unit_cost,
             ]);
         }
 
         $this->prsItems = [
-            ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => '']
+            ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''],
         ];
         $this->reset();
+
+        return redirect()->route('purchase-order');
     }
 
     public function render()

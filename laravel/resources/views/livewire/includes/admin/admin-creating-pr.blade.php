@@ -67,7 +67,7 @@
                 <label for="purpose" class="block mb-2 font-bold text-gray-700">
                     Purpose:
                 </label>
-                    <input type="text" value="{{ $createPr->designation }}" readonly class="block w-[300px] h-[100px] px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring">
+                    <input type="text" value="{{ $createPr->purpose }}" readonly class="block w-[300px] h-[100px] px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring">
                 
                     <div>
                         <label for="status">Status:</label>
