@@ -11,15 +11,15 @@
     <div class="mt-8">
         <!-- Department, PR No., and Date section -->
         <div class="grid grid-cols-1 mb-6 sm:grid-cols-3 sm:gap-x-10">
-            <div>
+            <div class='sm:ml-12'>
                 <p><strong>Department:</strong> {{ $purchaseOrder->creatingPr->department }}</p>
                 <p><strong>Section:</strong> {{ $purchaseOrder->creatingPr->section }}</p>
             </div>
-            <div class="sm:ml-24">
+            <div class="sm:ml-16">
                 <p><strong>P.R. No:</strong> {{ $purchaseOrder->pr_no }}</p>
                 <p><strong>SAI No:</strong> {{ $purchaseOrder->creatingPr->sai_no }}</p>
             </div>
-            <div class="sm:ml-48">
+            <div class="sm:ml-20">
                 <p><strong>Date:</strong> {{ $purchaseOrder->creatingPr->pr_date }}</p>
                 <p><strong>Date:</strong> {{ $purchaseOrder->creatingPr->sai_date }}</p>
             </div>
