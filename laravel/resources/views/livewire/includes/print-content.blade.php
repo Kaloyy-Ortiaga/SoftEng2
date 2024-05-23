@@ -53,18 +53,19 @@
                             <td class="px-4 py-3 border-r border-black">
                                 {{ $item->quantity }}
                             </td>
-                            <td class="px-4 py-3 border-r border-black">
-                                {{ $item->unit_cost }}
+                            <td class="px-4 py-3 border-r border-black">₱
+                                {{ number_format($item->unit_cost, 2, '.', ',') }}
                             </td>
-                            <td class="px-4 py-3">
-                                {{ $item->amount }}
+                            <td class="px-4 py-3">₱
+                                {{ number_format($item->amount, 2, '.', ',') }}
                             </td>
                         </tr>
                     @endforeach
                     <tr class="text-black border-b border-black">
                         <td colspan="5" class="px-1 py-3 font-bold border-r border-black"></td>
                         <td class="px-4 py-3 font-bold">
-                            Total: {{ $purchaseOrder->creatingPr->prsItems->sum('amount') }}
+                            Total: ₱
+                            {{ number_format($purchaseOrder->creatingPr->prsItems->sum('amount'), 2, '.', ',') }}
                         </td>
                     </tr>
                 </tbody>
