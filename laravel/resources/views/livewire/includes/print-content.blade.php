@@ -1,4 +1,4 @@
-<div class="w-full h-full px-4 pt-6 text-sm bg-white sm:px-6">
+<div class="w-full h-full pt-8 text-sm bg-white sm:px-6">
     <div class="flex flex-col items-center justify-center sm:flex-row">
         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/56d0e7314cf49885a03268756804ff4b8e88a4fe8089ee894995b314dd66dbe0?apiKey=19339f2aa9954834ba3c5156652a7fa7&"
             alt="Logo" class="w-[100px] h-[100px] mr-4 sm:mr-8">

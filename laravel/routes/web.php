@@ -39,3 +39,7 @@ Route::get('/print-request/{id}', function ($id) {
     return view('welcome', ['id' => $id]);
 })->name('print-request');
 
+
+Route::get('/PO-View', function () {
+    return view('welcome');
+})->name('purchase-order-view');

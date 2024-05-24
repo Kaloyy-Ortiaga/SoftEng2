@@ -27,7 +27,7 @@
 
                     <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div> {{-- line --}}
                     <div id="printContent"
-                        class=" px-16 py-12 mt-9 mb-[67px] h-full w-full text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ">
+                        class=" px-6 py-6 mt-9 mb-[67px] h-full w-full text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ">
                         @include('livewire.includes.print-content', ['purchaseOrder' => $purchaseOrder])
                     </div>
 
