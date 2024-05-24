@@ -61,8 +61,8 @@
                             </td>
                         </tr>
                     @endforeach
-                    <tr class="text-black border-b border-black">
-                        <td colspan="5" class="px-1 py-3 font-bold border-r border-black"></td>
+                    <tr class="border-b border-black">
+                <td colspan="5" class="px-4 py-2 font-bold text-right border-r border-black">Total:</td>
                         <td class="px-4 py-3 font-bold">
                             Total: ₱
                             {{ number_format($purchaseOrder->creatingPr->prsItems->sum('amount'), 2, '.', ',') }}
