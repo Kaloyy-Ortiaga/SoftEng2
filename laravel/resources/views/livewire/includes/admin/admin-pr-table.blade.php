@@ -1,4 +1,4 @@
-<div class="flex flex-col mt-6 -mb-9">
+<div class="flex flex-col mt-6 overflow-x-auto -mb-9">
      <table class="w-full mt-6 mb-8 text-sm text-left text-black border-2 border-black dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
