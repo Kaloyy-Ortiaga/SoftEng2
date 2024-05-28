@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class create_pr extends Model
-{  
+{
     use HasFactory;
 
     /**
@@ -19,7 +19,7 @@ class create_pr extends Model
      * @var string
      */
     protected $table = 'create_prs';
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -62,4 +62,8 @@ class create_pr extends Model
         return $this->hasMany(PrsItem::class);
     }
 
+    public function Purchaseorder(): HasMany
+    {
+        return $this->hasMany(PurchaseOrder::class);
+    }
 }

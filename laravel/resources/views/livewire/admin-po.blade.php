@@ -9,10 +9,7 @@
                         PURCHASE ORDER
                     </div>
                     <div class="flex gap-2 mt-10 mr-5">
-                        <button 
-                            class="min-w-[150px] h-9 justify-center font-medium text-white rounded-md shadow bg-black flex items-center">
-                            CREATE PURCHASE ORDER
-                        </button>
+                       
 
                         {{-- <button
                             class="w-[74px] h-9 justify-center font-medium text-white rounded-md shadow bg-indigo-800 flex items-center">
