@@ -35,7 +35,6 @@ class CreatePr extends Component
         'purpose' => 'required',
     ];
 
-
     protected $messages = [
         'department.required' => 'The department field is required.',
         'pr_no.required' => 'The PR No. field is required.',
@@ -51,8 +50,6 @@ class CreatePr extends Component
         'designation.required' => 'The designation field is required.',
         'purpose.required' => 'The purpose field is required.',
     ];
-
-
 
     public function mount()
     {
@@ -102,6 +99,15 @@ class CreatePr extends Component
         return $this->prsItems()->sum('amount');
     }
 
+    public function assignItemNumbers($createPrId)
+    {
+        $prsItems = PrsItem::where('create_pr_id', $createPrId)->get();
+
+        foreach ($prsItems as $index => $item) {
+            $item->item_no = $index + 1;
+            $item->save();
+        }
+    }
     public function submit()
     {
         $this->validate();
@@ -131,7 +137,7 @@ class CreatePr extends Component
 
         foreach ($this->prsItems as $item) {
             $unit_cost = !empty($item['unit_cost']) ? floatval($item['unit_cost']) : 0.0;
-    
+
             PrsItem::create([
                 'create_pr_id' => $createPr->id,
                 'stock_no' => $item['stock_no'],
@@ -142,6 +148,8 @@ class CreatePr extends Component
                 'amount' => intval($item['quantity']) * $unit_cost,
             ]);
         }
+
+        $this->assignItemNumbers($createPr->id);
 
         $this->prsItems = [
             ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''],

@@ -6,27 +6,27 @@
             <div class="flex flex-col ml-9 w-[84%] max-md:ml-0 max-md:w-full">
                 <div class="flex flex-row items-center justify-between">
                     <div class="mt-10 text-3xl font-semibold text-black max-md:max-w-full">
-                        PURCHASE REQUEST
+                        PURCHASE ORDER
                     </div>
                     <div class="flex gap-2 mt-10 mr-5">
-                        <button wire:click="createPurchaseOrder({{ $createPr->id }})"
+                        <button 
                             class="min-w-[150px] h-9 justify-center font-medium text-white rounded-md shadow bg-black flex items-center">
                             CREATE PURCHASE ORDER
                         </button>
 
-                        <button
+                        {{-- <button
                             class="w-[74px] h-9 justify-center font-medium text-white rounded-md shadow bg-indigo-800 flex items-center">
                             <a href="{{ route('print-request', ['id' => $createPr->purchaseRequest->id]) }}"
                                 class="flex items-center justify-center w-full h-full px-4">
                                 PRINT
                             </a>
-                        </button>
+                        </button> --}}
                     </div>
                 </div>
                 <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>
                 <div
                     class="px-16 py-12 mt-9 mb-[67px] h-full w-full text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
-                    @include('livewire.includes.admin.admin-creating-pr', ['createPr' => $createPr])
+                    @include('livewire.includes.admin.purchase-order-table', ['adminPurchaseOrder' => $adminPurchaseOrder])
                 </div>
             </div>
         </div>

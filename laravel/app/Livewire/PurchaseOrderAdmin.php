@@ -12,6 +12,14 @@ class PurchaseOrderAdmin extends Component
     public $layout = 'layouts.app';
     public $search;
 
+    public $selectedPurchaseRequestId;
+
+    public function createPurchaseOrder($purchaseRequestId)
+{
+    $this->selectedPurchaseRequestId = $purchaseRequestId;
+    return redirect()->route('admin.purchase-order-table', ['id' => $purchaseRequestId]);
+}
+
     public function render()
     {
         $purchaseRequests = purchase_request::with(['creatingPr' => function ($query) {
