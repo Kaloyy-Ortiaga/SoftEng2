@@ -73,7 +73,7 @@
                             </div>
                             <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
                                 <div class="flex flex-col gap-1">
-                                    <label for="po_auth" class="block font-bold text-gray-700">Authorized
+                                    <label for="po_auth" class="block font-bold text-gray-700 truncate">Authorized
                                         Official</label>
                                     <input type="text" wire:model="po_auth" id="po_auth"
                                         class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring">
@@ -94,7 +94,7 @@
                         <div class="flex flex-col gap-3">
                             <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
                                 <div class="flex flex-col gap-1">
-                                    <label for="po_cfa" class="block font-bold text-gray-700">CFA Certifiied
+                                    <label for="po_cfa" class="block font-bold text-gray-700 truncate">CFA Certifiied
                                         by</label>
                                     <input type="text" wire:model="po_cfa" id="po_cfa"
                                         class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring">
@@ -115,6 +115,7 @@
                                 <label for="po_status">Status:</label>
                                 <select wire:model="po_status" id="po_status"
                                     class="block w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
+                                    <option value="" selected class="text-gray-500">Select status</option>
                                     <option value="pending">pending</option>
                                     <option value="delayed">delayed</option>
                                     <option value="complete">complete</option>
@@ -137,6 +138,14 @@
 
                 </div>
                 <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-1">
+                        <label for="po_number" class="block font-bold text-gray-700">Purchase Order No.</label>
+                        <input type="text" wire:model="po_number" id="po_number"
+                            class="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring">
+                        @error('po_number')
+                            <span class="text-red-500">{{ $message }}</span>
+                        @enderror
+                    </div>
                     <div class="flex flex-col gap-1">
                         <label for="po_word" class="block font-bold text-gray-700">Sub-Total in Word</label>
                         <input type="text" wire:model="po_word" id="po_word"

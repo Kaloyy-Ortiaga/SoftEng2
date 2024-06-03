@@ -15,6 +15,7 @@ class CreatePurchaseOrdersTable extends Migration
     {
         Schema::create('purchase_orders', function (Blueprint $table) {
             $table->id();
+            $table->date('POdate_created');
             $table->string('supplier');
             $table->string('tel_no');
             $table->date('po_date');
