@@ -25,14 +25,12 @@ class CreatePr extends Component
 
     protected $rules = [
         'department' => 'required',
-        'pr_no' => 'required|unique:purchase_requests',
-        'pr_date' => 'required|date',
         'section' => 'required',
-        'sai_no' => 'required|unique:create_prs',
-        'sai_date' => 'required|date',
         'requested_by' => 'required',
         'designation' => 'required',
         'purpose' => 'required',
+        'pr_no' => 'nullable|unique:purchase_requests',
+        'sai_no' => 'nullable|unique:create_prs',
     ];
 
     protected $messages = [
@@ -113,7 +111,7 @@ class CreatePr extends Component
         $this->validate();
 
         $purchaseRequest = purchase_request::create([
-            'date_created' => $this->pr_date,
+            'date_created' => now(),
             'pr_no' => $this->pr_no,
             'department' => $this->department,
             'status' => 'pending',

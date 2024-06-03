@@ -31,21 +31,8 @@ class PurchaseOrder extends Model
         'po_number'
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'po_date' => 'date',
-        'po_dateod' => 'date',
-    ];
-
-    /**
-     * Get the create_prs record associated with the purchase order.
-     */
     public function createPr()
     {
-        return $this->belongsTo(create_pr::class, 'id');
+        return $this->belongsTo(create_pr::class, 'id', 'id');
     }
 }

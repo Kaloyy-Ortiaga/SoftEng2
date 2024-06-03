@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('purchase_request_id');
             $table->enum('department', ['CHASS', 'CET', 'CN', 'CS', 'CISTM']);
-            $table->string('pr_no');
-            $table->date('pr_date');
+            $table->string('pr_no')->nullable(); // Make pr_no nullable
+            $table->date('pr_date')->nullable();;
             $table->string('section');
-            $table->string('sai_no');
-            $table->date('sai_date');
+            $table->string('sai_no')->unique()->nullable();// Make sai_no nullable
+            $table->date('sai_date')->nullable();;
             $table->string('requested_by');
             $table->string('designation');
-            $table->string('purpose');
+            $table->string('purpose'); 
             $table->decimal('total_amount', 10, 2)->nullable();
             $table->string('approved_by')->nullable(); 
             $table->string('approved_designation')->nullable(); 
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->timestamps();
             
             // Foreign key constraint
-            $table->foreign('pr_no')->references('pr_no')->on('purchase_requests')->onDelete('cascade');
+            $table->foreign('pr_no')->references('pr_no')->on('purchase_requests')->onDelete('set null');
             $table->foreign('purchase_request_id')->references('id')->on('purchase_requests')->onDelete('cascade');
         });
     }

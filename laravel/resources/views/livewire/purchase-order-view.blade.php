@@ -22,9 +22,9 @@
 
                                 
                             </div>
-                            <div class="overflow-x-auto">
+                            {{-- <div class="overflow-x-auto">
                                 @include('livewire.includes.admin.purchase-order-table')
-                            </div>
+                            </div> --}}
                             {{-- <div class="mt-6 leading-[143%] text-gray-800 text-opacity-80">
                                 Showing {{ $purchaseRequests->firstItem() }} to {{ $purchaseRequests->lastItem() }} of {{ $purchaseRequests->total() }} entries
                             </div>
