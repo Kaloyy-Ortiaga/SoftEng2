@@ -25,12 +25,12 @@
                             <div class="overflow-x-auto">
                                 @include('livewire.includes.admin.po-table-view')
                             </div>
-                            {{-- <div class="mt-6 leading-[143%] text-gray-800 text-opacity-80">
-                                Showing {{ $purchaseRequests->firstItem() }} to {{ $purchaseRequests->lastItem() }} of {{ $purchaseRequests->total() }} entries
+                            <div class="mt-6 leading-[143%] text-gray-800 text-opacity-80">
+                                Showing {{ $purchaseOrders->firstItem() }} to {{ $purchaseOrders->lastItem() }} of {{ $purchaseOrders->total() }} entries
                             </div>
                             <div class="flex self-end gap-0 mt-8 text-zinc-500">
-                                {{ $purchaseRequests->links('vendor.pagination.custom') }}
-                            </div> --}}
+                                {{ $purchaseOrders->links('vendor.pagination.custom') }}
+                            </div>
                         </div>
                     </div>
                 </div>
