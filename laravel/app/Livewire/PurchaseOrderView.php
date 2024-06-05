@@ -19,9 +19,13 @@ class PurchaseOrderView extends Component
         })
         ->paginate(8);
 
-
         return view('livewire.purchase-order-view', [
             'purchaseOrders' => $purchaseOrders,
         ]);
+    }
+
+    public function viewPurchaseOrder($id)
+    {
+        return redirect()->route('admin-po', ['id' => $id]);
     }
 }

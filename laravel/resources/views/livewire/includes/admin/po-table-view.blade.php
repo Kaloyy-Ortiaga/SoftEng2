@@ -65,7 +65,7 @@
         </div>
         @foreach ($purchaseOrders as $index => $purchaseOrder)
             <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-                <a href="{{ route('admin.pr', ['id' => $purchaseOrder->id]) }}" class="px-4 py-2 text-indigo-800">View</a>
+                <a href="{{ route('admin-po', ['id' => $purchaseOrder->id]) }}" class="px-4 py-2 text-indigo-800">View</a>
             </div>
         @endforeach
     </div>

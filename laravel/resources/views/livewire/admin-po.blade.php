@@ -21,9 +21,12 @@
                     </div>
                 </div>
                 <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>
-                <div
-                    class="px-16 py-12 mt-9 mb-[67px] h-full w-full text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
-                    @include('livewire.includes.admin.purchase-order-table', ['adminPurchaseOrder' => $adminPurchaseOrder])
+                <div class="px-16 py-12 mt-9 mb-[67px] h-full w-full text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+                     @if($isEdit)
+                        @include('livewire.includes.admin.purchase-order-details')
+                    @else
+                        @include('livewire.includes.admin.purchase-order-table')
+                    @endif
                 </div>
             </div>
         </div>

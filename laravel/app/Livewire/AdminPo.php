@@ -9,13 +9,9 @@ use App\Models\PurchaseOrder;
 class AdminPo extends Component
 {
     public $adminPurchaseOrder;
+    public $isEdit = false;
+    public $purchaseOrder;
 
-    public function mount($id)
-    {
-        $this->adminPurchaseOrder = create_pr::with('prsItems')->findOrFail($id);
-    }
-
-    public $layout = 'layouts.app';
     public $supplier;
     public $tel_no;
     public $po_date;
@@ -36,6 +32,15 @@ class AdminPo extends Component
 
     public $createPurchase;
 
+    public function mount($id)
+    {
+        if (PurchaseOrder::where('id', $id)->exists()) {
+            $this->isEdit = true;
+            $this->purchaseOrder = PurchaseOrder::findOrFail($id);
+        } else {
+            $this->adminPurchaseOrder = create_pr::with('prsItems')->findOrFail($id);
+        }
+    }
     protected $rules = [
         'supplier' => 'required',
         'tel_no' => 'required',
@@ -83,26 +88,48 @@ class AdminPo extends Component
     {
         $this->validate();
 
-        $createPurchase = PurchaseOrder::create([
-            'POdate_created'=> now(),
-            'supplier' => $this->supplier,
-            'tel_no' => $this->tel_no,
-            'po_date' => $this->po_date,
-            'address' => $this->address,
-            'tin' => $this->tin,
-            'mop' => $this->mop,
-            'po_auth' => $this->po_auth,
-            'po_authPos' => $this->po_authPos,
-            'po_cfa' => $this->po_cfa,
-            'po_cfapos' => $this->po_cfapos,
-            'po_status' => $this->po_status,
-            'po_word' => $this->po_word,
-            'po_place' => $this->po_place,
-            'po_dateod' => $this->po_dateod,
-            'po_validity' => $this->po_validity,
-            'po_term' => $this->po_term,
-            'po_number' => $this->po_number,
-        ]);
+        if ($this->isEdit) {
+            $this->purchaseOrder->update([
+                'supplier' => $this->supplier,
+                'tel_no' => $this->tel_no,
+                'po_date' => $this->po_date,
+                'address' => $this->address,
+                'tin' => $this->tin,
+                'mop' => $this->mop,
+                'po_auth' => $this->po_auth,
+                'po_authPos' => $this->po_authPos,
+                'po_cfa' => $this->po_cfa,
+                'po_cfapos' => $this->po_cfapos,
+                'po_status' => $this->po_status,
+                'po_word' => $this->po_word,
+                'po_place' => $this->po_place,
+                'po_dateod' => $this->po_dateod,
+                'po_validity' => $this->po_validity,
+                'po_term' => $this->po_term,
+                'po_number' => $this->po_number,
+            ]);
+        } else {
+            PurchaseOrder::create([
+                'POdate_created' => now(),
+                'supplier' => $this->supplier,
+                'tel_no' => $this->tel_no,
+                'po_date' => $this->po_date,
+                'address' => $this->address,
+                'tin' => $this->tin,
+                'mop' => $this->mop,
+                'po_auth' => $this->po_auth,
+                'po_authPos' => $this->po_authPos,
+                'po_cfa' => $this->po_cfa,
+                'po_cfapos' => $this->po_cfapos,
+                'po_status' => $this->po_status,
+                'po_word' => $this->po_word,
+                'po_place' => $this->po_place,
+                'po_dateod' => $this->po_dateod,
+                'po_validity' => $this->po_validity,
+                'po_term' => $this->po_term,
+                'po_number' => $this->po_number,
+            ]);
+        }
 
         $this->reset();
 
@@ -113,6 +140,8 @@ class AdminPo extends Component
     {
         return view('livewire.admin-po', [
             'adminPurchaseOrder' => $this->adminPurchaseOrder,
+            'isEdit' => $this->isEdit,
+            'purchaseOrder' => $this->purchaseOrder,
         ]);
     }
 }

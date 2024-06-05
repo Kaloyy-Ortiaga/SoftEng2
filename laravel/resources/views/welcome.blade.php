@@ -38,6 +38,7 @@
         @elseif(Route::is('print-request'))
             <livewire:print-request :id="$id" />
         @else
+<<<<<<< Updated upstream
             <div class="row">
                 <div class="col">
                     <livewire:purchase-order />
@@ -45,6 +46,13 @@
                 <div class="col">
                     <livewire:purchase-order-admin />
                 </div>
+=======
+            <div class="col">
+                <livewire:purchase-order />
+            </div>
+            <div class="col">
+                <livewire:purchase-order-admin />
+>>>>>>> Stashed changes
             </div>
         @endif
     </div>
