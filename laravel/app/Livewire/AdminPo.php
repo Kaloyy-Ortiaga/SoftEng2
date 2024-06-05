@@ -106,7 +106,7 @@ class AdminPo extends Component
 
         $this->reset();
 
-        return redirect()->route('purchase-order-admin');
+        return redirect()->route('purchase-order.detail', $createPurchase->id);
     }
 
     public function render()

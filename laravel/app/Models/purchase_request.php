@@ -21,6 +21,9 @@ class purchase_request extends Model
 
     public function scopeSearch($query, $value)
     {
-        $query->where('date_created', 'like', "%{$value}%")->orWhere('pr_no', 'like', "%{$value}%")->orWhere('department', 'like', "%{$value}%")->orWhere('status', 'like', "%{$value}%");
+        $query->where('date_created', 'like', "%{$value}%")
+        ->orWhere('pr_no', 'like', "%{$value}%")
+        ->orWhere('department', 'like', "%{$value}%")
+        ->orWhere('status', 'like', "%{$value}%");
     }
 }

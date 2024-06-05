@@ -26,7 +26,7 @@ class CreatePurchaseOrdersTable extends Migration
             $table->string('po_authPos');
             $table->string('po_cfa');
             $table->string('po_cfapos');
-            $table->enum('po_status', ['pending', 'delayed', 'complete']);
+            $table->enum('po_status', ['PENDING', 'DELAYED', 'COMPLETE']);
             $table->string('po_word');
             $table->string('po_place');
             $table->date('po_dateod');

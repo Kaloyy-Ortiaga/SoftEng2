@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\AdminPo;
+use App\Livewire\PurchaseOrderView;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,10 +32,12 @@ Route::get('/PO-View', function () {
     return view('welcome');
 })->name('purchase-order-view');
 
-// Route::get('/admin/po', function () {
-//     return view('welcome');
-// })->name('admin-po');
-
 Route::get('/admin/po/{id}', function ($id) {
     return view('welcome', ['id' => $id]);
 })->name('admin-po');
+
+
+
+Route::get('/purchase-order/{id}/detail', [PurchaseOrderView::class, 'showDetail'])->name('purchase-order.detail');
+Route::post('/purchase-order/{id}/update', [PurchaseOrderView::class, 'update'])->name('purchase-order.update');
+Route::get('/admin-po/{id}', [AdminPo::class, 'show'])->name('admin-po.show');

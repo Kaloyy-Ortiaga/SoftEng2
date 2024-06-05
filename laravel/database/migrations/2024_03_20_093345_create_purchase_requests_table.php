@@ -14,7 +14,7 @@ return new class extends Migration
             $table->date('date_created');
             $table->string('pr_no')->unique()->nullable(); 
             $table->enum('department', ['CHASS', 'CET', 'CN', 'CS', 'CISTM']);
-            $table->enum('status', ['denied', 'approved', 'pending']);
+            $table->enum('status', ['DENIED', 'APPROVED', 'PENDING']);
             $table->timestamps(); 
         });
     }

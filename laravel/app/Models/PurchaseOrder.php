@@ -32,14 +32,14 @@ class PurchaseOrder extends Model
         'po_number',
     ];
     
-    public function creatingPo()
-    {
-        return $this->belongsTo(create_pr::class, 'id', 'id');
-    }
-
     public function createPr()
     {
         return $this->belongsTo(create_pr::class, 'po_number', 'pr_no');
+    }
+
+    public function prsItems()
+    {
+        return $this->hasMany(PrsItem::class);
     }
 
     public function scopeSearch($query, $value)
@@ -50,5 +50,4 @@ class PurchaseOrder extends Model
               ->orWhere('po_status', 'like', "%{$value}%")
               ->orWhere('po_number', 'like', "%{$value}%");
     }
-
 }
