@@ -10,11 +10,8 @@ class PurchaseOrderAdmin extends Component
     use WithPagination;
 
     public $layout = 'layouts.app';
-=======
     use WithPagination;
 
-
->>>>>>> Stashed changes
     public $search;
 
     public $selectedPurchaseRequestId;
