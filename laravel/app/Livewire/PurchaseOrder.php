@@ -9,8 +9,13 @@ use Livewire\WithPagination;
 
 class PurchaseOrder extends Component
 {
+<<<<<<< Updated upstream
     public $layout = 'layouts.app';
     use WithPagination;
+=======
+    use WithPagination;
+
+>>>>>>> Stashed changes
     public $search;
     public $isAdmin = false;
     public function render()
