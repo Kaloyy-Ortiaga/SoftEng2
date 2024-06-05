@@ -10,8 +10,8 @@
                     </div>
                     <div class="flex gap-2 mt-10 mr-5">
                         <button wire:click="createPurchaseOrder({{ $createPr->id }})"
-                            class="min-w-[150px] h-9 justify-center font-medium text-white rounded-md shadow bg-black flex items-center">
-                            CREATE PURCHASE ORDER
+                            class="min-w-[120px] h-9 justify-center font-medium text-white rounded-md shadow bg-black flex items-center">
+                            CREATE P.O.
                         </button>
 
                         <button
@@ -26,6 +26,11 @@
                 <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>
                 <div
                     class="px-16 py-12 mt-9 mb-[67px] h-full w-full text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+                    @if ($showWarning)
+                        <div class="mb-4 text-red-600 text-xl font-bold text-center">
+                            {{ $warningMessage }}
+                        </div>
+                    @endif
                     @include('livewire.includes.admin.admin-creating-pr', ['createPr' => $createPr])
                 </div>
             </div>

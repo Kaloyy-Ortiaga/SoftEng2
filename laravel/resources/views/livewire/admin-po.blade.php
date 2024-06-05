@@ -9,15 +9,6 @@
                         PURCHASE ORDER
                     </div>
                     <div class="flex gap-2 mt-10 mr-5">
-                       
-
-                        {{-- <button
-                            class="w-[74px] h-9 justify-center font-medium text-white rounded-md shadow bg-indigo-800 flex items-center">
-                            <a href="{{ route('print-request', ['id' => $createPr->purchaseRequest->id]) }}"
-                                class="flex items-center justify-center w-full h-full px-4">
-                                PRINT
-                            </a>
-                        </button> --}}
                     </div>
                 </div>
                 <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>

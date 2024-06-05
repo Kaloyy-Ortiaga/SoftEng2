@@ -39,6 +39,8 @@
             <livewire:print-request :id="$id" />
         @elseif(Route::is('admin.detail-po'))
             <livewire:admin-detail-po :po_number="$po_number" />
+        @elseif(Route::is('print-purchase-order'))
+            <livewire:print-purchase-order :po_number="$po_number" />
         @else
             <div class="row">
                 <div class="col">

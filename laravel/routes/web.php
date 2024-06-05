@@ -41,3 +41,7 @@ Route::get('/admin/po/{id}', function ($id) {
 Route::get('/admin/detail-po/{po_number}', function ($po_number) {
     return view('welcome', ['po_number' => $po_number]);
 })->name('admin.detail-po');
+
+Route::get('/print-purchase-order/{po_number}', function ($po_number) {
+    return view('welcome', ['po_number' => $po_number]);
+})->name('print-purchase-order');

@@ -17,9 +17,19 @@ class AdminPr extends Component
     public $pr_date;
     public $sai_no;
     public $sai_date;
+    public $warningMessage;
+    public $showWarning = false;
 
     public function createPurchaseOrder($id)
     {
+        $createPr = create_pr::with('purchaseRequest')->findOrFail($id);
+
+        if ($createPr->purchaseRequest->status !== 'approved') {
+            $this->showWarning = true;
+            $this->warningMessage = 'The Purchase Request needs to be approved first.';
+            return;
+        }
+
         return redirect()->route('admin-po', ['id' => $id]);
     }
 
