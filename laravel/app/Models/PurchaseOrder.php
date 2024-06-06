@@ -37,11 +37,6 @@ class PurchaseOrder extends Model
         return $this->belongsTo(create_pr::class, 'id', 'id');
     }
 
-    public function createPr()
-    {
-        return $this->belongsTo(create_pr::class, 'po_number', 'pr_no');
-    }
-
     public function scopeSearch($query, $value)
     {
         $query->where('POdate_created', 'like', "%{$value}%")

@@ -3,7 +3,7 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize aspect-[1.3] bg-slate-100 leading-[114%]">
             No.
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseorders as $index => $purchaseorder)
             <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }} aspect-[1.3]">
                 {{ $index + 1 }}
             </div>
@@ -13,9 +13,9 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             Date created
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseorders as $index => $purchaseorder)
             <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-                {{ $purchaseOrder->POdate_created }}
+                {{ $purchaseorder->POdate_created }}
             </div>
         @endforeach
     </div>
@@ -23,9 +23,9 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             P.O. No.
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseorders as $index => $purchaseorder)
             <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-                {{ $purchaseOrder->po_number }}
+                {{ $purchaseorder->po_number }}
             </div>
         @endforeach
     </div>
@@ -33,9 +33,9 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             Supplier
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseorders as $index => $purchaseorder)
             <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-                {{ $purchaseOrder->supplier }}
+                {{ $purchaseorder->supplier }}
             </div>
         @endforeach
     </div>
@@ -43,9 +43,9 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             Amount
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseorders as $index => $purchaseorder)
             <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-                ₱ {{ number_format($purchaseOrder->createPr->total_amount, 2) }}
+                {{ $purchaseorder->adminPurchaseOrder->prs_items_sum_amount ?? 0 }}
             </div>
         @endforeach
     </div>
@@ -53,9 +53,9 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             Status
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseorders as $index => $purchaseorder)
             <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-                {{ $purchaseOrder->po_status }}
+                {{ $purchaseorder->po_status }}
             </div>
         @endforeach
     </div>
@@ -63,9 +63,9 @@
         <div class="justify-center px-2 py-3 font-thin tracking-wide text-black capitalize bg-slate-100 leading-[114%]">
             Actions
         </div>
-        @foreach ($purchaseOrders as $index => $purchaseOrder)
+        @foreach ($purchaseorders as $index => $purchaseorder)
             <div class="justify-center px-2 py-2.5 {{ $index % 2 === 0 ? 'bg-white' : 'bg-slate-50' }}">
-                <a href="{{ route('admin.pr', ['id' => $purchaseOrder->id]) }}" class="px-4 py-2 text-indigo-800">View</a>
+                <a href="{{ route('admin.pr', ['id' => $purchaseorder->id]) }}" class="px-4 py-2 text-indigo-800">View</a>
             </div>
         @endforeach
     </div>

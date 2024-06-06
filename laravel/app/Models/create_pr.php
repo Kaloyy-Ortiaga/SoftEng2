@@ -61,10 +61,6 @@ class create_pr extends Model
     {
         return $this->hasMany(PrsItem::class);
     }
-    public function getTotalAmountAttribute(): float
-    {
-        return $this->prsItems->sum('amount');
-    }
 
     public function Purchaseorder(): HasMany
     {
