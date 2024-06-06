@@ -117,9 +117,9 @@
                 <p class="ml-40">{{ $purchaseOrder->po_cfapos }}</p>
             </div>
             <div class="grid grid-cols-1">
-                <p class="ml-12">OS No. : <span class="ml-6">_____________________________________________________</span></p>
-                <p class="ml-12">Amount : <span class="ml-4">_____________________________________________________</span></p>
-                <p class="ml-12">Date : <span class="ml-9">_____________________________________________________</span></p>
+                <p class="ml-12">OS No.: <span >_____________________________________________________</span></p>
+                <p class="ml-12">Amount: <span >_____________________________________________________</span></p>
+                <p class="ml-12">Date: <span >_____________________________________________________</span></p>
             </div>
         </div>
         <div class="grid grid-cols-1 mt-4">
