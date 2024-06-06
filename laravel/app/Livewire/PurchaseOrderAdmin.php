@@ -15,10 +15,10 @@ class PurchaseOrderAdmin extends Component
     public $selectedPurchaseRequestId;
 
     public function createPurchaseOrder($purchaseRequestId)
-    {
-        $this->selectedPurchaseRequestId = $purchaseRequestId;
-        return redirect()->route('admin.purchase-order-table', ['id' => $purchaseRequestId]);
-    }
+{
+    $this->selectedPurchaseRequestId = $purchaseRequestId;
+    return redirect()->route('admin.purchase-order-table', ['id' => $purchaseRequestId]);
+}
 
     public function render()
     {

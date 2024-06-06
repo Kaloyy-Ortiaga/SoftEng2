@@ -116,9 +116,9 @@
                                 <select wire:model="po_status" id="po_status"
                                     class="block w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
                                     <option value="" selected class="text-gray-500">Select status</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="delayed">Delayed</option>
-                                    <option value="complete">Complete</option>
+                                    <option value="pending">pending</option>
+                                    <option value="delayed">delayed</option>
+                                    <option value="complete">complete</option>
                                 </select>
                             </div>
                             <div class="flex justify-start gap-2 mt-2">

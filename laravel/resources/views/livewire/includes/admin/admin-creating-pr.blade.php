@@ -9,7 +9,7 @@
                 </div>
                 <div class="flex flex-col">
                     <label for="pr_no" class="py-2 text-xl font-medium text-black capitalize">P.R No.</label>
-                    <input type="text" wire:model="pr_no" id="pr_no" readonly
+                    <input type="text" wire:model="pr_no" id="pr_no"
                         class="block w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
                     @error('pr_no')
                         <span class="mt-1 text-red-500">{{ $message }}</span>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="flex flex-col">
                     <label for="pr_date" class="py-2 text-xl font-medium text-black capitalize">Date</label>
-                    <input type="date" wire:model="pr_date" id="pr_date" readonly
+                    <input type="date" wire:model="pr_date" id="pr_date"
                         class="block w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
                 </div>
 
@@ -31,7 +31,7 @@
                 </div>
                 <div class="flex flex-col">
                     <label for="sai_no" class="py-2 text-xl font-medium text-black capitalize">SAI NO.</label>
-                    <input type="text" wire:model="sai_no" id="sai_no" readonly
+                    <input type="text" wire:model="sai_no" id="sai_no"
                         class="block w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
                     @error('sai_no')
                         <span class="mt-1 text-red-500">{{ $message }}</span>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="flex flex-col">
                     <label for="sai_date" class="py-2 text-xl font-medium text-black capitalize">Date</label>
-                    <input type="date" wire:model="sai_date" id="sai_date" readonly
+                    <input type="date" wire:model="sai_date" id="sai_date"
                         class="block w-full pl-2 text-base text-black bg-white border border-black rounded-md shadow h-9 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-gray-300">
                 </div>
             </div>
