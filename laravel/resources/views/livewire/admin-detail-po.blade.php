@@ -1,3 +1,4 @@
+{{-- admin-detail-po.blade.php --}}
 <div class="flex flex-col bg-white">
     @include('livewire.includes.header')
     <div class="w-full pr-14 bg-zinc-300 max-md:pr-5 max-md:max-w-full">
@@ -7,13 +8,6 @@
                 <div class="flex flex-row items-center justify-between">
                     <div class="mt-10 text-3xl font-semibold text-black max-md:max-w-full">
                         PURCHASE ORDER DETAIL
-                    </div>
-                    <div>
-                        <button
-                            class=" w-[74px] h-9 mt-10 mr-3 justify-center font-medium text-white rounded-md shadow bg-indigo-800"
-                            onclick="window.location.href='{{ route('print-purchase-order', ['po_number' => $purchaseOrder->po_number]) }}'">
-                            PRINT
-                        </button>
                     </div>
                 </div>
                 <div class="h-px mt-3 bg-black shrink-0 max-md:max-w-full"></div>

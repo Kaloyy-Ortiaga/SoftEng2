@@ -30,11 +30,6 @@ class CreatePr extends Component
         'purpose' => 'required',
         'pr_no' => 'nullable|unique:purchase_requests',
         'sai_no' => 'nullable|unique:create_prs',
-        'prsItems.*.stock_no' => 'required',
-        'prsItems.*.unit' => 'required',
-        'prsItems.*.item_description' => 'required',
-        'prsItems.*.quantity' => 'required|numeric|min:1',
-        'prsItems.*.unit_cost' => 'required|numeric|min:0.01',
     ];
 
     protected $messages = [
@@ -51,15 +46,6 @@ class CreatePr extends Component
         'requested_by.required' => 'The requested by field is required.',
         'designation.required' => 'The designation field is required.',
         'purpose.required' => 'The purpose field is required.',
-        'prsItems.*.stock_no.required' => 'Empty field',
-        'prsItems.*.unit.required' => 'Empty field',
-        'prsItems.*.item_description.required' => 'Empty field',
-        'prsItems.*.quantity.required' => 'Empty field',
-        'prsItems.*.quantity.numeric' => 'Empty field',
-        'prsItems.*.quantity.min' => 'Empty field',
-        'prsItems.*.unit_cost.required' => 'Empty field',
-        'prsItems.*.unit_cost.numeric' => 'Empty field',
-        'prsItems.*.unit_cost.min' => 'Empty field',
     ];
 
     public function mount()
@@ -73,18 +59,30 @@ class CreatePr extends Component
 
     public function addRow()
     {
-        $this->prsItems[] = ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''];
+        if (is_array($this->prsItems)) {
+            $this->prsItems[] = ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''];
+        } else {
+            $this->prsItems = [
+                ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => '']
+            ];
+        }
     }
 
     public function deleteRow($index)
     {
-        unset($this->prsItems[$index]);
-        $this->prsItems = array_values($this->prsItems);
+        if (is_array($this->prsItems) && count($this->prsItems) > 1) {
+            unset($this->prsItems[$index]);
+            $this->prsItems = array_values($this->prsItems);
+        } elseif (is_array($this->prsItems) && count($this->prsItems) === 1) {
+            $this->resetRow(0);
+        }
     }
 
     public function resetRow($index)
     {
-        $this->prsItems[$index] = ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''];
+        if (is_array($this->prsItems)) {
+            $this->prsItems[$index] = ['stock_no' => '', 'unit' => '', 'item_description' => '', 'quantity' => '', 'unit_cost' => ''];
+        }
     }
 
     public function cancel()
@@ -95,11 +93,18 @@ class CreatePr extends Component
 
     public function calculateTotalAmount()
     {
-        return array_reduce($this->prsItems, function ($carry, $item) {
-            return $carry + ($item['quantity'] * $item['unit_cost']);
-        }, 0);
+        return $this->prsItems()->sum('amount');
     }
 
+    public function assignItemNumbers($createPrId)
+    {
+        $prsItems = PrsItem::where('create_pr_id', $createPrId)->get();
+
+        foreach ($prsItems as $index => $item) {
+            $item->item_no = $index + 1;
+            $item->save();
+        }
+    }
     public function submit()
     {
         $this->validate();
@@ -128,14 +133,16 @@ class CreatePr extends Component
         ]);
 
         foreach ($this->prsItems as $item) {
+            $unit_cost = !empty($item['unit_cost']) ? floatval($item['unit_cost']) : 0.0;
+
             PrsItem::create([
                 'create_pr_id' => $createPr->id,
                 'stock_no' => $item['stock_no'],
                 'unit' => $item['unit'],
                 'item_description' => $item['item_description'],
                 'quantity' => intval($item['quantity']),
-                'unit_cost' => floatval($item['unit_cost']),
-                'amount' => intval($item['quantity']) * floatval($item['unit_cost']),
+                'unit_cost' => $unit_cost,
+                'amount' => intval($item['quantity']) * $unit_cost,
             ]);
         }
 
@@ -154,4 +161,3 @@ class CreatePr extends Component
         return view('livewire.create-pr');
     }
 }
-
