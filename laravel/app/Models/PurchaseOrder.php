@@ -8,11 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class PurchaseOrder extends Model
 {
     use HasFactory;
-
+    
     protected $table = 'purchase_orders';
 
     protected $fillable = [
-        'POdate_created',
         'supplier',
         'tel_no',
         'po_date',
@@ -29,21 +28,11 @@ class PurchaseOrder extends Model
         'po_dateod',
         'po_validity',
         'po_term',
-        'po_number',
+        'po_number'
     ];
-    
-    public function creatingPo()
+
+    public function createPr()
     {
         return $this->belongsTo(create_pr::class, 'id', 'id');
     }
-
-    public function scopeSearch($query, $value)
-    {
-        $query->where('POdate_created', 'like', "%{$value}%")
-              ->orWhere('supplier', 'like', "%{$value}%")
-              ->orWhere('po_cfapos', 'like', "%{$value}%")
-              ->orWhere('po_status', 'like', "%{$value}%")
-              ->orWhere('po_number', 'like', "%{$value}%");
-    }
-
 }

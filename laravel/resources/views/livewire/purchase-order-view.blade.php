@@ -7,7 +7,7 @@
             <div class="flex flex-col md:ml-6 mt-10 w-full md:w-[84%]">
                 <div class="flex flex-col self-stretch my-auto -mt-5">
                     <div class="mt-10 text-3xl font-semibold text-black">
-                        PURCHASE ORDER
+                        PURCHASE REQUEST
                     </div>
                     <div class="h-px mt-3 bg-black shrink-0"></div>
                     <div class="flex justify-center items-center px-5 py-12 mt-9 text-sm bg-white rounded-br-lg rounded-tl-lg shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
@@ -22,9 +22,9 @@
 
                                 
                             </div>
-                            <div class="overflow-x-auto">
-                                @include('livewire.includes.admin.po-table-view')
-                            </div>
+                            {{-- <div class="overflow-x-auto">
+                                @include('livewire.includes.admin.purchase-order-table')
+                            </div> --}}
                             {{-- <div class="mt-6 leading-[143%] text-gray-800 text-opacity-80">
                                 Showing {{ $purchaseRequests->firstItem() }} to {{ $purchaseRequests->lastItem() }} of {{ $purchaseRequests->total() }} entries
                             </div>
