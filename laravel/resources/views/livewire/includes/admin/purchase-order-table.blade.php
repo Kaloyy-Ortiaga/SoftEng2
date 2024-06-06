@@ -68,7 +68,7 @@
                                 <label class="block font-bold text-gray-700">Note:</label>
                                 <div
                                     class="block w-full h-[100px] px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring">
-                                    {{ $note }}
+                                    Sample goods
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">

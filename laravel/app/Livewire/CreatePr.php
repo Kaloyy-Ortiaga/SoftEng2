@@ -9,6 +9,7 @@ use App\Models\PrsItem;
 
 class CreatePr extends Component
 {
+    public $layout = 'layouts.app';
     public $createPr;
     public $department;
     public $pr_no;

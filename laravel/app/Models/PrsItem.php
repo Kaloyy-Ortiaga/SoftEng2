@@ -23,5 +23,4 @@ class PrsItem extends Model
     {
         return $this->belongsTo(create_pr::class, 'create_pr_id');
     }
-    
 }

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class AdminPr extends Component
 {
+    public $layout = 'layouts.app';
     public $createPr;
     public $status;
     public $approvedBy;

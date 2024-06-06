@@ -9,6 +9,7 @@ class PurchaseOrderAdmin extends Component
 {
     use WithPagination;
 
+    public $layout = 'layouts.app';
     public $search;
 
     public $selectedPurchaseRequestId;

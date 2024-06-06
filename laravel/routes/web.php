@@ -37,7 +37,3 @@ Route::get('/PO-View', function () {
 Route::get('/admin/po/{id}', function ($id) {
     return view('welcome', ['id' => $id]);
 })->name('admin-po');
-
-Route::get('/admin/detail-po/{po_number}', function ($po_number) {
-    return view('welcome', ['po_number' => $po_number]);
-})->name('admin.detail-po');

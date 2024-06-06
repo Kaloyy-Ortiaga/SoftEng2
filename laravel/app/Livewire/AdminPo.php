@@ -9,14 +9,13 @@ use App\Models\PurchaseOrder;
 class AdminPo extends Component
 {
     public $adminPurchaseOrder;
-    public $note;
 
     public function mount($id)
     {
         $this->adminPurchaseOrder = create_pr::with('prsItems')->findOrFail($id);
-        $this->note = $this->adminPurchaseOrder->note; 
     }
 
+    public $layout = 'layouts.app';
     public $supplier;
     public $tel_no;
     public $po_date;
@@ -114,7 +113,6 @@ class AdminPo extends Component
     {
         return view('livewire.admin-po', [
             'adminPurchaseOrder' => $this->adminPurchaseOrder,
-            'note' => $this->note,
         ]);
     }
 }

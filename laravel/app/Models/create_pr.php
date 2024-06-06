@@ -66,7 +66,7 @@ class create_pr extends Model
         return $this->prsItems->sum('amount');
     }
 
-    public function purchaseOrders(): HasMany
+    public function Purchaseorder(): HasMany
     {
         return $this->hasMany(PurchaseOrder::class);
     }

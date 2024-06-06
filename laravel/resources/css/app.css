@@ -12,7 +12,7 @@
         margin: 0; /* Remove default margins */
     }
     body {
-        margin: 0; /* Remove default body margins */
+        margin: 2; /* Remove default body margins */
     }
     header, footer {
         display: none; /* Hide headers and footers */
